@@ -95,12 +95,16 @@ public class BankClass {
                 pokelets = pokelets - findUpgradeCost();
                 upgradeAccount();
                 System.out.println("Thank you for upgrading your account!");
-                if (accountType.equals("Very Important Member")) {
-                    System.out.println("You are now a Very Important Member of the Millionaire Club\nYour account can hold 1,000,000,000 pokelets!");
-                } else if (accountType.equals("Bronze Member")) {
-                    System.out.println("You have become a Bronze Member of the Millionaire Club!\nYour account can hold 1,000,000 pokelets!");
-                } else {
-                    System.out.println("You are now a " + accountType + "!\nYour account can hold " + findMaxBalance() + " pokelets!");
+                switch (accountType) {
+                    case "Very Important Member":
+                        System.out.println("You are now a Very Important Member of the Millionaire Club\nYour account can hold 1,000,000,000 pokelets!");
+                        break;
+                    case "Bronze Member":
+                        System.out.println("You have become a Bronze Member of the Millionaire Club!\nYour account can hold 1,000,000 pokelets!");
+                        break;
+                    default:
+                        System.out.println("You are now a " + accountType + "!\nYour account can hold " + findMaxBalance() + " pokelets!");
+                        break;
                 }
             } else {
                 JOptionPane.showMessageDialog(null, "You do not have enough pokelets to upgrade your account\nYou need " + (findUpgradeCost() - pokelets) + " more pokelets to upgrade your account",
