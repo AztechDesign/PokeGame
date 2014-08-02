@@ -69,7 +69,7 @@ public class RunPokeGame {
                 } else if (action.equals("ranking")) {
                     dojo.ranking();
                 } else if (action.equals("tournament")) {
-                    bank.addpokelets(dojo.tournament());
+                    bank.addpokelets(dojo.tournament(input));
                 } else if (action.equals("help")) {
                     dojo.help();
                 } else {

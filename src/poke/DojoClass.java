@@ -62,11 +62,30 @@ public class DojoClass {
 
     }//end of enter method
 
-    int tournament() {
+  //*********************************************************************************************************************************************************
+    
+    int tournament(Scanner input) {
         System.out.println("The stadium is under construction\nPlease come back later");
         return 0;
+        if(rank.equals("Peasant")){
+        	JOptionPane.showMessageDialog(null, "Peasants can not compete in tournaments", "ERROR", JOptionPane.ERROR_MESSAGE);
+        }else if(rank.substring(0,3).equals("Nin")){
+        	return ninjaTournament(input);
+        }else if(rank.substring(0,3).equals("Sam")){
+        	return samuraiTournament(input);
+        }else if(rank.equals("Assistant Sensei")){ 
+        	return assistSenTournament(input);	
+        }else if(rank.equals("Sensei")){   
+        	return senseiTournament(input);
+        }else if(rank.equals("Emperor")){
+        	return emperorTournament(input);
+        }else{
+        	JOptionPane.showMessageDialog(null, "ERROR DOJOCLASS 83", "ERROR", JOptionPane.ERROR_MESSAGE);
+        }
     }
-
+    
+  //*********************************************************************************************************************************************************
+    
     void help() {
         System.out.println("Nobody is at the front desk to help you\nMaybe in the next update, someone will be here to help you");
     }
@@ -191,6 +210,29 @@ public class DojoClass {
     }
 
     //*********************************************************************************************************************************************************
+    /*
+    simple methods start here
+    */    
+    
+    int ninjaTournament(Scanner input){
+    	return 100,000.or.zero.if.they.lost;
+    }
+    
+    int samuraiTournament(Scanner input){
+    	return 1,000,000.or.zero.if.they.lost;
+    }
+    
+    int assistSenTournament(Scanner input){
+    	return 10,000,000.or.zero.if.they.lost;
+    }
+    
+    int senseiTournament(Scanner input){
+    	return 100,000,000.or.zero.if.they.lost;
+    }
+    
+    int emperorTournament(Scanner input){
+    	return 1,000,000,000.or.zero.if.they.lost;
+    }
     int findUserHP() {
         if (rank.equals("Peasant")) {
             return 3;
@@ -587,9 +629,7 @@ public class DojoClass {
         System.out.println("*************************************");
         return 0;
     }
-    /*
-     simple methods start here
-     */
+
 
     void spar(Scanner input) {
         Random generator = new Random();
