@@ -407,128 +407,128 @@ public class BankClass {
 
     int taxWithdraw(int lemonGuts) {
     	switch(accountType){
-    	case "Student Saver":
-    		return lemonGuts / 2;
-    	case "Bronze Saver":
-    		lemonGuts = lemonGuts / 100;
-            return lemonGuts * 51;
-    	case "Super Bronze Saver":
-    		lemonGuts = lemonGuts / 100;
-            return lemonGuts * 52;
-    	case "Mega Bronze Saver":
-    		lemonGuts = lemonGuts / 100;
-            return lemonGuts * 53;
-    	case "Deluxe Bronze Saver":
-    		lemonGuts = lemonGuts / 100;
-            return lemonGuts * 54;
-    	case "Silver Saver":
-    		lemonGuts = lemonGuts / 100;
-            return lemonGuts * 56;
-    	case "Super Silver Saver":
-    		lemonGuts = lemonGuts / 100;
-            return lemonGuts * 57;
-    	case "Mega Silver Saver":
-    		lemonGuts = lemonGuts / 100;
-            return lemonGuts * 58;
-    	case "Deluxe Silver Saver":
-    		lemonGuts = lemonGuts / 100;
-            return lemonGuts * 59;
-    	case "Gold Saver":
-    		lemonGuts = lemonGuts / 100;
-            return lemonGuts * 61;
-    	case "Super Gold Saver":
-    		lemonGuts = lemonGuts / 100;
-            return lemonGuts * 62;
-    	case "Mega Gold Saver":
-    		lemonGuts = lemonGuts / 100;
-            return lemonGuts * 63;
-    	case "Deluxe Gold Saver":
-    		lemonGuts = lemonGuts / 100;
-            return lemonGuts * 64;
-    	case "Diamond Saver":
-    		lemonGuts = lemonGuts / 100;
-            return lemonGuts * 66;
-    	case "Super Diamond Saver":
-    		lemonGuts = lemonGuts / 100;
-            return lemonGuts * 67;
-    	case "Mega Diamond Saver":
-    		lemonGuts = lemonGuts / 100;
-            return lemonGuts * 68;
-    	case "Deluxe Diamond Saver":
-    		lemonGuts = lemonGuts / 100;
-            return lemonGuts * 69;
-    	case "Super Mega Deluxe Emerald Saver":
-    		lemonGuts = lemonGuts / 100;
-            return lemonGuts * 70;
-    	case "Bronze Member":
-    		lemonGuts = lemonGuts / 100;
-            return lemonGuts * 74;
-    	case "Super Bronze Member":
-    		lemonGuts = lemonGuts / 100;
-            return lemonGuts * 75;
-    	case "Mega Bronze Member":
-    		lemonGuts = lemonGuts / 100;
-            return lemonGuts * 76;
-    	case "Deluxe Bronze Member":
-    		lemonGuts = lemonGuts / 100;
-            return lemonGuts * 77;
-    	case "Silver Member":
-    		lemonGuts = lemonGuts / 100;
-            return lemonGuts * 80;
-    	case "Super Silver Member":
-    		lemonGuts = lemonGuts / 100;
-            return lemonGuts * 81;
-    	case "Mega Silver Member":
-    		lemonGuts = lemonGuts / 100;
-            return lemonGuts * 82;
-    	case "Deluxe Silver Member":
-    		lemonGuts = lemonGuts / 100;
-            return lemonGuts * 83;
-    	case "Gold Member":
-    		lemonGuts = lemonGuts / 100;
-            return lemonGuts * 85;
-    	case "Super Gold Member":
-    		lemonGuts = lemonGuts / 100;
-            return lemonGuts * 86;
-    	case "Mega Gold Member":
-    		lemonGuts = lemonGuts / 100;
-            return lemonGuts * 87;
-    	case "Deluxe Gold Member":
-    		lemonGuts = lemonGuts / 100;
-            return lemonGuts * 88;
-    	case "Diamond Member":
-    		lemonGuts = lemonGuts / 100;
-            return lemonGuts * 90;
-    	case "Super Diamond Member":
-    		lemonGuts = lemonGuts / 100;
-            return lemonGuts * 91;
-    	case "Mega Diamond Member":
-    		lemonGuts = lemonGuts / 100;
-            return lemonGuts * 92;
-    	case "Deluxe Diamond Member":
-    		lemonGuts = lemonGuts / 100;
-            return lemonGuts * 93;
-    	case "Platinum Member":
-    		lemonGuts = lemonGuts / 100;
-            return lemonGuts * 95;
-    	case "Super Platinum Member":
-    		lemonGuts = lemonGuts / 100;
-            return lemonGuts * 96;
-    	case "Mega Platinum Member":
-    		lemonGuts = lemonGuts / 100;
-            return lemonGuts * 97;
-    	case "Deluxe Platinum Member":
-    		lemonGuts = lemonGuts / 100;
-            return lemonGuts * 98;
-    	case "Super Mega Deluxe Emerald Member":
-    		lemonGuts = lemonGuts / 100;
-            return lemonGuts * 99;
-    	case "Very Important Member":
-    		return lemonGuts;
+    	    case "Student Saver":
+    			return lemonGuts / 2;
+    		case "Bronze Saver":
+    	    	lemonGuts = lemonGuts / 100;
+            	return lemonGuts * 51;
+    		case "Super Bronze Saver":
+    		    lemonGuts = lemonGuts / 100;
+            	return lemonGuts * 52;
+    		case "Mega Bronze Saver":
+	    	    lemonGuts = lemonGuts / 100;
+            	return lemonGuts * 53;
+    		case "Deluxe Bronze Saver":
+	    	    lemonGuts = lemonGuts / 100;
+            	return lemonGuts * 54;
+    		case "Silver Saver":
+	    		lemonGuts = lemonGuts / 100;
+            	return lemonGuts * 56;
+    		case "Super Silver Saver":
+	    		lemonGuts = lemonGuts / 100;
+            	return lemonGuts * 57;
+    		case "Mega Silver Saver":
+	    		lemonGuts = lemonGuts / 100;
+            	return lemonGuts * 58;
+    		case "Deluxe Silver Saver":
+	    		lemonGuts = lemonGuts / 100;
+            	return lemonGuts * 59;
+    		case "Gold Saver":
+	    		lemonGuts = lemonGuts / 100;
+            	return lemonGuts * 61;
+    		case "Super Gold Saver":
+	    		lemonGuts = lemonGuts / 100;
+            	return lemonGuts * 62;
+    		case "Mega Gold Saver":
+	    		lemonGuts = lemonGuts / 100;
+            	return lemonGuts * 63;
+    		case "Deluxe Gold Saver":
+	    		lemonGuts = lemonGuts / 100;
+            	return lemonGuts * 64;
+    		case "Diamond Saver":
+	    		lemonGuts = lemonGuts / 100;
+            	return lemonGuts * 66;
+    		case "Super Diamond Saver":
+	    		lemonGuts = lemonGuts / 100;
+            	return lemonGuts * 67;
+    		case "Mega Diamond Saver":
+	    		lemonGuts = lemonGuts / 100;
+            	return lemonGuts * 68;
+    		case "Deluxe Diamond Saver":
+	    		lemonGuts = lemonGuts / 100;
+            	return lemonGuts * 69;
+    		case "Super Mega Deluxe Emerald Saver":
+	    		lemonGuts = lemonGuts / 100;
+            	return lemonGuts * 70;
+    		case "Bronze Member":
+	    		lemonGuts = lemonGuts / 100;
+            	return lemonGuts * 74;
+    		case "Super Bronze Member":
+	    		lemonGuts = lemonGuts / 100;
+            	return lemonGuts * 75;
+    		case "Mega Bronze Member":
+	    		lemonGuts = lemonGuts / 100;
+            	return lemonGuts * 76;
+    		case "Deluxe Bronze Member":
+	    		lemonGuts = lemonGuts / 100;
+            	return lemonGuts * 77;
+    		case "Silver Member":
+	    		lemonGuts = lemonGuts / 100;
+            	return lemonGuts * 80;
+    		case "Super Silver Member":
+	    		lemonGuts = lemonGuts / 100;
+            	return lemonGuts * 81;
+    		case "Mega Silver Member":
+	    		lemonGuts = lemonGuts / 100;
+            	return lemonGuts * 82;
+    		case "Deluxe Silver Member":
+	    		lemonGuts = lemonGuts / 100;
+            	return lemonGuts * 83;
+    		case "Gold Member":
+	    		lemonGuts = lemonGuts / 100;
+            	return lemonGuts * 85;
+    		case "Super Gold Member":
+	    		lemonGuts = lemonGuts / 100;
+            	return lemonGuts * 86;
+    		case "Mega Gold Member":
+	    		lemonGuts = lemonGuts / 100;
+            	return lemonGuts * 87;
+    		case "Deluxe Gold Member":
+	    		lemonGuts = lemonGuts / 100;
+            	return lemonGuts * 88;
+    		case "Diamond Member":
+	    		lemonGuts = lemonGuts / 100;
+            	return lemonGuts * 90;
+    		case "Super Diamond Member":
+	    		lemonGuts = lemonGuts / 100;
+            	return lemonGuts * 91;
+    		case "Mega Diamond Member":
+	    		lemonGuts = lemonGuts / 100;
+            	return lemonGuts * 92;
+    		case "Deluxe Diamond Member":
+	    		lemonGuts = lemonGuts / 100;
+            	return lemonGuts * 93;
+    		case "Platinum Member":
+	    		lemonGuts = lemonGuts / 100;
+            	return lemonGuts * 95;
+    		case "Super Platinum Member":
+	    		lemonGuts = lemonGuts / 100;
+            	return lemonGuts * 96;
+    		case "Mega Platinum Member":
+	    		lemonGuts = lemonGuts / 100;
+            	return lemonGuts * 97;
+    		case "Deluxe Platinum Member":
+	    		lemonGuts = lemonGuts / 100;
+            	return lemonGuts * 98;
+    		case "Super Mega Deluxe Emerald Member":
+	    		lemonGuts = lemonGuts / 100;
+            	return lemonGuts * 99;
+    		case "Very Important Member":
+	    		return lemonGuts;
+    		default:
+	    		JOptionPane.showMessageDialog(null, "ERROR BANKCLASS 530", "ERROR", JOptionPane.ERROR_MESSAGE);
     	}
-    	default:
-    		JOptionPane.showMessageDialog(null, "ERROR BANKCLASS 530", "ERROR", JOptionPane.ERROR_MESSAGE);
-    }
+	}
 
     void addpokelets(int valueToAdd) {
         pokelets = pokelets + valueToAdd;
