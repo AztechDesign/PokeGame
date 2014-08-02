@@ -406,126 +406,128 @@ public class BankClass {
     }
 
     int taxWithdraw(int lemonGuts) {
-        if (accountType.equals("Student Saver")) {
-            return lemonGuts / 2;
-        } else if (accountType.equals("Bronze Saver")) {
-            lemonGuts = lemonGuts / 100;
+    	switch(accountType){
+    	case "Student Saver":
+    		return lemonGuts / 2;
+    	case "Bronze Saver":
+    		lemonGuts = lemonGuts / 100;
             return lemonGuts * 51;
-        } else if (accountType.equals("Super Bronze Saver")) {
-            lemonGuts = lemonGuts / 100;
+    	case "Super Bronze Saver":
+    		lemonGuts = lemonGuts / 100;
             return lemonGuts * 52;
-        } else if (accountType.equals("Mega Bronze Saver")) {
-            lemonGuts = lemonGuts / 100;
+    	case "Mega Bronze Saver":
+    		lemonGuts = lemonGuts / 100;
             return lemonGuts * 53;
-        } else if (accountType.equals("Deluxe Bronze Saver")) {
-            lemonGuts = lemonGuts / 100;
+    	case "Deluxe Bronze Saver":
+    		lemonGuts = lemonGuts / 100;
             return lemonGuts * 54;
-        } else if (accountType.equals("Silver Saver")) {
-            lemonGuts = lemonGuts / 100;
+    	case "Silver Saver":
+    		lemonGuts = lemonGuts / 100;
             return lemonGuts * 56;
-        } else if (accountType.equals("Super Silver Saver")) {
-            lemonGuts = lemonGuts / 100;
+    	case "Super Silver Saver":
+    		lemonGuts = lemonGuts / 100;
             return lemonGuts * 57;
-        } else if (accountType.equals("Mega Silver Saver")) {
-            lemonGuts = lemonGuts / 100;
+    	case "Mega Silver Saver":
+    		lemonGuts = lemonGuts / 100;
             return lemonGuts * 58;
-        } else if (accountType.equals("Deluxe Silver Saver")) {
-            lemonGuts = lemonGuts / 100;
+    	case "Deluxe Silver Saver":
+    		lemonGuts = lemonGuts / 100;
             return lemonGuts * 59;
-        } else if (accountType.equals("Gold Saver")) {
-            lemonGuts = lemonGuts / 100;
+    	case "Gold Saver":
+    		lemonGuts = lemonGuts / 100;
             return lemonGuts * 61;
-        } else if (accountType.equals("Super Gold Saver")) {
-            lemonGuts = lemonGuts / 100;
+    	case "Super Gold Saver":
+    		lemonGuts = lemonGuts / 100;
             return lemonGuts * 62;
-        } else if (accountType.equals("Mega Gold Saver")) {
-            lemonGuts = lemonGuts / 100;
+    	case "Mega Gold Saver":
+    		lemonGuts = lemonGuts / 100;
             return lemonGuts * 63;
-        } else if (accountType.equals("Deluxe Gold Saver")) {
-            lemonGuts = lemonGuts / 100;
+    	case "Deluxe Gold Saver":
+    		lemonGuts = lemonGuts / 100;
             return lemonGuts * 64;
-        } else if (accountType.equals("Diamond Saver")) {
-            lemonGuts = lemonGuts / 100;
+    	case "Diamond Saver":
+    		lemonGuts = lemonGuts / 100;
             return lemonGuts * 66;
-        } else if (accountType.equals("Super Diamond Saver")) {
-            lemonGuts = lemonGuts / 100;
+    	case "Super Diamond Saver":
+    		lemonGuts = lemonGuts / 100;
             return lemonGuts * 67;
-        } else if (accountType.equals("Mega Diamond Saver")) {
-            lemonGuts = lemonGuts / 100;
+    	case "Mega Diamond Saver":
+    		lemonGuts = lemonGuts / 100;
             return lemonGuts * 68;
-        } else if (accountType.equals("Deluxe Diamond Saver")) {
-            lemonGuts = lemonGuts / 100;
+    	case "Deluxe Diamond Saver":
+    		lemonGuts = lemonGuts / 100;
             return lemonGuts * 69;
-        } else if (accountType.equals("Super Mega Deluxe Emerald Saver")) {
-            lemonGuts = lemonGuts / 100;
+    	case "Super Mega Deluxe Emerald Saver":
+    		lemonGuts = lemonGuts / 100;
             return lemonGuts * 70;
-        } else if (accountType.equals("Bronze Member")) {
-            lemonGuts = lemonGuts / 100;
+    	case "Bronze Member":
+    		lemonGuts = lemonGuts / 100;
             return lemonGuts * 74;
-        } else if (accountType.equals("Super Bronze Member")) {
-            lemonGuts = lemonGuts / 100;
+    	case "Super Bronze Member":
+    		lemonGuts = lemonGuts / 100;
             return lemonGuts * 75;
-        } else if (accountType.equals("Mega Bronze Member")) {
-            lemonGuts = lemonGuts / 100;
+    	case "Mega Bronze Member":
+    		lemonGuts = lemonGuts / 100;
             return lemonGuts * 76;
-        } else if (accountType.equals("Deluxe Bronze Member")) {
-            lemonGuts = lemonGuts / 100;
+    	case "Deluxe Bronze Member":
+    		lemonGuts = lemonGuts / 100;
             return lemonGuts * 77;
-        } else if (accountType.equals("Silver Member")) {
-            lemonGuts = lemonGuts / 100;
+    	case "Silver Member":
+    		lemonGuts = lemonGuts / 100;
             return lemonGuts * 80;
-        } else if (accountType.equals("Super Silver Member")) {
-            lemonGuts = lemonGuts / 100;
+    	case "Super Silver Member":
+    		lemonGuts = lemonGuts / 100;
             return lemonGuts * 81;
-        } else if (accountType.equals("Mega Silver Member")) {
-            lemonGuts = lemonGuts / 100;
+    	case "Mega Silver Member":
+    		lemonGuts = lemonGuts / 100;
             return lemonGuts * 82;
-        } else if (accountType.equals("Deluxe Silver Member")) {
-            lemonGuts = lemonGuts / 100;
+    	case "Deluxe Silver Member":
+    		lemonGuts = lemonGuts / 100;
             return lemonGuts * 83;
-        } else if (accountType.equals("Gold Member")) {
-            lemonGuts = lemonGuts / 100;
+    	case "Gold Member":
+    		lemonGuts = lemonGuts / 100;
             return lemonGuts * 85;
-        } else if (accountType.equals("Super Gold Member")) {
-            lemonGuts = lemonGuts / 100;
+    	case "Super Gold Member":
+    		lemonGuts = lemonGuts / 100;
             return lemonGuts * 86;
-        } else if (accountType.equals("Mega Gold Member")) {
-            lemonGuts = lemonGuts / 100;
+    	case "Mega Gold Member":
+    		lemonGuts = lemonGuts / 100;
             return lemonGuts * 87;
-        } else if (accountType.equals("Deluxe Gold Member")) {
-            lemonGuts = lemonGuts / 100;
+    	case "Deluxe Gold Member":
+    		lemonGuts = lemonGuts / 100;
             return lemonGuts * 88;
-        } else if (accountType.equals("Diamond Member")) {
-            lemonGuts = lemonGuts / 100;
+    	case "Diamond Member":
+    		lemonGuts = lemonGuts / 100;
             return lemonGuts * 90;
-        } else if (accountType.equals("Super Diamond Member")) {
-            lemonGuts = lemonGuts / 100;
+    	case "Super Diamond Member":
+    		lemonGuts = lemonGuts / 100;
             return lemonGuts * 91;
-        } else if (accountType.equals("Mega Diamond Member")) {
-            lemonGuts = lemonGuts / 100;
+    	case "Mega Diamond Member":
+    		lemonGuts = lemonGuts / 100;
             return lemonGuts * 92;
-        } else if (accountType.equals("Deluxe Diamond Member")) {
-            lemonGuts = lemonGuts / 100;
+    	case "Deluxe Diamond Member":
+    		lemonGuts = lemonGuts / 100;
             return lemonGuts * 93;
-        } else if (accountType.equals("Platinum Member")) {
-            lemonGuts = lemonGuts / 100;
+    	case "Platinum Member":
+    		lemonGuts = lemonGuts / 100;
             return lemonGuts * 95;
-        } else if (accountType.equals("Super Platinum Member")) {
-            lemonGuts = lemonGuts / 100;
+    	case "Super Platinum Member":
+    		lemonGuts = lemonGuts / 100;
             return lemonGuts * 96;
-        } else if (accountType.equals("Mega Platinum Member")) {
-            lemonGuts = lemonGuts / 100;
+    	case "Mega Platinum Member":
+    		lemonGuts = lemonGuts / 100;
             return lemonGuts * 97;
-        } else if (accountType.equals("Deluxe Platinum Member")) {
-            lemonGuts = lemonGuts / 100;
+    	case "Deluxe Platinum Member":
+    		lemonGuts = lemonGuts / 100;
             return lemonGuts * 98;
-        } else if (accountType.equals("Super Mega Deluxe Emerald Member")) {
-            lemonGuts = lemonGuts / 100;
+    	case "Super Mega Deluxe Emerald Member":
+    		lemonGuts = lemonGuts / 100;
             return lemonGuts * 99;
-        } else if (accountType.equals("Very Important Member")) {
-            return lemonGuts;
-        }
-        return 0;
+    	case "Very Important Member":
+    		return lemonGuts;
+    	}
+    	default:
+    		JOptionPane.showMessageDialog(null, "ERROR BANKCLASS 530", "ERROR", JOptionPane.ERROR_MESSAGE);
     }
 
     void addpokelets(int valueToAdd) {
