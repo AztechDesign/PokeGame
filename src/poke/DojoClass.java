@@ -1,4 +1,3 @@
-package poke;
 
 import javax.swing.JOptionPane;
 import java.util.Random;
@@ -30,6 +29,7 @@ public class DojoClass {
     private int a;
     private int b;
     private int c;
+    private int place;
 
     DojoClass() {
         rank = "Peasant";
@@ -65,8 +65,6 @@ public class DojoClass {
   //*********************************************************************************************************************************************************
     
     int tournament(Scanner input) {
-        System.out.println("The stadium is under construction\nPlease come back later");
-        return 0;
         if(rank.equals("Peasant")){
         	JOptionPane.showMessageDialog(null, "Peasants can not compete in tournaments", "ERROR", JOptionPane.ERROR_MESSAGE);
         }else if(rank.substring(0,3).equals("Nin")){
@@ -82,6 +80,7 @@ public class DojoClass {
         }else{
         	JOptionPane.showMessageDialog(null, "ERROR DOJOCLASS 83", "ERROR", JOptionPane.ERROR_MESSAGE);
         }
+        return 0;
     }
     
   //*********************************************************************************************************************************************************
@@ -215,30 +214,101 @@ public class DojoClass {
     */    
     
     int ninjaTournament(Scanner input){
-    	return 100,000.or.zero.if.they.lost;
+    	Random generator = new Random();
+    	System.out.println("*************************************");
+        System.out.println("*********NINJA TOURNAMENT!***********");
+        System.out.println("*************************************");
+        System.out.println("*********QUALIFYING ROUND!***********");
+        setFightingVars(0,0);
+        fightSequence(input);
+        if(userHP == 0){
+        	place = generator.nextInt(8) + 9;
+        	System.out.println("You placed " + place + "th out of 16");
+        	System.out.println("Your performance proved that you deserve 0 pokelets");
+        	return 0;
+        }else if(compHP == 0){
+        	System.out.println("*************************************");
+        	System.out.println("********YOU HAVE QUALIFIED!**********");
+        	System.out.println("*************************************");
+        	System.out.println("**********QUARTER FINALS!************");
+        	setFightingVars(0,2); // give user no bonus and comp 2 HP bonus and set consectuive pokes and blocks for player and user to zero
+        	fightSequence(input);
+        	if(userHP == 0){
+        		place = generator.nextInt(4) + 5;
+        		System.out.println("You placed " + place + "th out of 16");
+        		System.out.println("Your performance proved that you deserve 0 pokelets");
+        		return 0;
+        	}else if(compHP == 0){
+        		System.out.println("*************************************");
+            	System.out.println("YOU HAVE ADVANCED TO THE SEMI-FINALS!");
+            	System.out.println("*************************************");
+            	System.out.println("***********SEMI-FINALS!**************");
+            	setFightingVars(0,3);
+            	fightSequence(input);
+            	if(userHP == 0){
+            		place = generator.nextInt(2) + 3;
+            		switch(place){
+            			case 3:
+            				System.out.println("You placed 3rd out of 16");
+            				break;
+            			case 4:
+            				System.out.println("You placed 4th out of 16");
+            				break;
+        				default:
+        					System.out.println("ERROR DOJOCLASS line 258");
+            		}
+            		System.out.println("Your performance proved that you deserve 0 pokelets");
+            		return 0;
+            	}else if(compHP == 0){
+            		System.out.println("*************************************");
+                	System.out.println("***YOU HAVE ADVANCED TO THE FINALS!**");
+                	System.out.println("*************************************");
+                	System.out.println("***************FINALS****************");
+                	setFightingVars(0,5);
+                	fightSequence(input);
+                	if(userHP == 0){
+                		System.out.println("You placed 2nd out of 16");
+                		System.out.println("Your performance proved that you deserve 0 pokelets");
+                		return 0;
+                	}else if(compHP == 0){
+                		System.out.println("*************************************");
+                    	System.out.println("*******YOU WON THE TOURNAMENT!******");
+                    	System.out.println("************************************");
+                    	System.out.println("");
+                    	System.out.println("Your performance proved that you deserve 100000 pokelets!");
+                    	return 100000;
+                	}
+            	}//advance to finals else if
+        	}//advance to semi-finals else if
+        }//advance to quarter finals else if
+        return 0;
     }
     
-    int samuraiTournament(Scanner input){
-    	return 1,000,000.or.zero.if.they.lost;
+   int samuraiTournament(Scanner input){
+    	//return 1,000,000.or.zero.if.they.lost;
+	   return 0;
     }
     
     int assistSenTournament(Scanner input){
-    	return 10,000,000.or.zero.if.they.lost;
+    	//return 10,000,000.or.zero.if.they.lost;
+    	return 0;
     }
     
     int senseiTournament(Scanner input){
-    	return 100,000,000.or.zero.if.they.lost;
+    	//return 100,000,000.or.zero.if.they.lost;
+    	return 0;
     }
     
     int emperorTournament(Scanner input){
-    	return 1,000,000,000.or.zero.if.they.lost;
+    	//return 1,000,000,000.or.zero.if.they.lost;
+    	return 0;
     }
     int findUserHP() {
         if (rank.equals("Peasant")) {
             return 3;
-        } else if (rank.equals("Ninja Trainee") || rank.equals("Ninja Amateur") || rank.equals("Ninja") || rank.equals("Ninja Pro") || rank.equals("Ninja Instructor")) {
+        } else if (rank.substring(0,3).equals("Nin")) {
             return 5;
-        } else if (rank.equals("Samurai Trainee") || rank.equals("Samurai Amateur") || rank.equals("Samurai") || rank.equals("Samurai") || rank.equals("Samurai Instructor")) {
+        } else if (rank.substring(0,3).equals("Sam")) {
             return 6;
         } else if (rank.equals("Assistant Sensei")) {
             return 7;
@@ -254,363 +324,18 @@ public class DojoClass {
         }
     }
 
-    int testFight(Scanner input) {
-        Random generator = new Random();
-        userHP = findUserHP();
-        compHP = getcompHP() * 2;
-        consecutiveAttacks = 0;
+    void setFightingVars(int userBonus, int compBonus){
+    	userHP = findUserHP() + userBonus;
+    	compHP = getcompHP() + compBonus;
+    	consecutiveAttacks = 0;
         consecutiveBlocks = 0;
         consecutiveCompBlocks = 0;
         consecutiveCompAttacks = 0;
+    }
+    int testFight(Scanner input) {
         System.out.println("*************************************");
         System.out.println("***********TIME TO TEST!*************");
-        do {
-            //start user attack
-            do {
-                if (Stats == true) {
-                    System.out.println("*************************************");
-                    System.out.println("You                          Opponent");
-                    System.out.format("HP:%2d                        HP: %d\n", userHP, compHP);
-                    System.out.format("CP:%2d                        CP: %d\n", consecutiveAttacks, consecutiveCompAttacks);
-                    System.out.println("CB: " + consecutiveBlocks + "                        CB: " + consecutiveCompBlocks);
-                }
-                System.out.println("**************ATTACK*****************"); // print stars for less confusion
-                validAction = false;
-                System.out.println("Choose your attack: legpoke, stomachpoke, or headpoke");
-                userAction = input.nextLine();
-                userAction = userAction.toLowerCase();
-                //end user attack
-                if (userAction.equals("legpoke") || userAction.equals("stomachpoke") || userAction.equals("headpoke")) {
-                    validAction = true;
-                    compAction = generator.nextInt(3) + 1;// start comp block
-                    switch (compAction) {
-                        case 1:
-                            compActionString = "legpoke";
-                            if (text == true) {
-                                System.out.println("Your opponent blocked their legs");
-                            }
-                            break;
-                        case 2:
-                            compActionString = "stomachpoke";
-                            if (text == true) {
-                                System.out.println("Your opponent blocked their stomach");
-                            }
-                            break;
-                        case 3:
-                            compActionString = "headpoke";
-                            if (text == true) {
-                                System.out.println("Your opponent blocked their head");
-                            }
-
-                    }//end comp block
-                    // comp blocks with legpoke so that strings can be compared instead of having to deal with all nine possibilities
-                    if (userAction.equals(compActionString)) {
-                        consecutiveCompBlocks = consecutiveCompBlocks + 1;
-                        if (consecutiveAttacks >= 3) {
-                            if (text == true) {
-                                System.out.println("Your opponent has ended your poking spree!\nYour opponent got +" + consecutiveAttacks + " HP!");
-                            }
-                            compHP = compHP + consecutiveAttacks;
-                        }
-                        consecutiveAttacks = 0;
-                        if (text == true) {
-                            System.out.println("Your attack was blocked!\nYour opponent took no damage"); // code for comp blocking correctly
-                        }
-                    } else {                            // code for scoring
-                        consecutiveAttacks = consecutiveAttacks + 1;
-                        if (consecutiveCompBlocks >= 3) {
-                            if (text == true) {
-                                System.out.println("You ended your opponent's blocking spree!\nYou got +" + consecutiveCompBlocks + " HP!");
-                            }
-                            userHP = userHP + consecutiveCompBlocks;
-                        }
-                        consecutiveCompBlocks = 0;
-                        if (userAction.equals("legpoke")) {
-                            if (text == true) {
-                                System.out.println("You poked your opponent's leg!");
-                            }
-                        } else if (userAction.equals("stomachpoke")) {
-                            if (text == true) {
-                                System.out.println("You poked your opponent's stomach!"); // say where they hit the person
-                            }
-                        } else if (userAction.equals("headpoke")) {
-                            if (text == true) {
-                                System.out.println("You poked your opponent's head!");
-                            }
-                        }
-                        crit = generator.nextInt(userHP);
-                        if (crit == 0) {
-                            if (text == true) {
-                                System.out.println("Your poke was super effective!\nIt dealt 3 damage!");
-                            } else {
-                                System.out.println("Super Effective Poke!");
-                            }
-                            compHP = compHP - 3;
-                        } else {
-                            if (text == true) {
-                                System.out.println("Your poke was not very effective...\nIt only dealt 1 damage...");
-                            }
-                            compHP = compHP - 1; // make comp take damage
-                        }
-                    }
-
-                    if (consecutiveAttacks == 3) {
-                        if (text == true) {
-                            System.out.println("Poking Spree!\nYour opponent lost 3 HP!");
-                        }
-                        compHP = compHP - 3;
-                    } else if (consecutiveAttacks == 4) {
-                        if (text == true) {
-                            System.out.println("Poking Spree!\nYour opponent lost 1 HP!");
-                        }
-                        compHP = compHP - 1;
-                    } else if (consecutiveAttacks == 5) {
-                        if (text == true) {
-                            System.out.println("Super Poking Spree!\nYour opponent lost 5 HP!");
-                        }
-                        compHP = compHP - 5;
-                    } else if (consecutiveAttacks == 6 || consecutiveAttacks == 7 || consecutiveAttacks == 8 || consecutiveAttacks == 9) {
-                        if (text == true) {
-                            System.out.println("Super Poking Spree!\nYour opponent lost 2 HP!");
-                        }
-                        compHP = compHP - 2;
-                    } else if (consecutiveAttacks == 10) {
-                        if (text == true) {
-                            System.out.println("Legendary Poking Spree!\nYour opponent lost 10 HP!");
-                        }
-                        compHP = compHP - 10;
-                    } else if (consecutiveAttacks >= 11) {
-                        if (text == true) {
-                            System.out.println("Legendary Poking Spree!\nYour opponent lost 3 HP!");
-                        }
-                        compHP = compHP - 3;
-                    }
-
-                    if (consecutiveCompBlocks == 3) {
-                        if (text == true) {
-                            System.out.println("Your opponent is on a Blocking Spree!\nYou lost 3 HP!");
-                        }
-                        userHP = userHP - 3;
-                    } else if (consecutiveCompBlocks == 4) {
-                        if (text == true) {
-                            System.out.println("Your opponent is on a Blocking Spree!\nYou lost 1 HP!");
-                        }
-                        userHP = userHP - 1;
-                    } else if (consecutiveCompBlocks == 5) {
-                        if (text == true) {
-                            System.out.println("Your opponent is on a Super Blocking Spree!\nYou lost 5 HP!");
-                        }
-                        userHP = userHP - 5;
-                    } else if (consecutiveCompBlocks == 6 || consecutiveCompBlocks == 7 || consecutiveCompBlocks == 8 || consecutiveCompBlocks == 9) {
-                        if (text == true) {
-                            System.out.println("Your opponent is on a Super Blocking Spree!\nYou lost 2 HP!");
-                        }
-                        userHP = userHP - 2;
-                    } else if (consecutiveCompBlocks == 10) {
-                        if (text == true) {
-                            System.out.println("Your opponent is on a Legendary Blocking Spree!\nYou lost 10 HP!");
-                        }
-                        userHP = userHP - 10;
-                    } else if (consecutiveCompBlocks >= 11) {
-                        if (text == true) {
-                            System.out.println("Your opponent is on a Legendary Blocking Spree!\nYou lost 3 HP!");
-                        }
-                        userHP = userHP - 3;
-                    }
-
-                    if (compHP <= 0 && text == true) {
-                        System.out.println("Your opponent fainted!");
-                    } else if (compHP == 1 && text == true) {
-                        System.out.println("Your opponent can only take 1 more hit!");
-                    } else {
-                        if (compHP <= 5 && text == true) {
-                            System.out.println("Your opponent can only take " + compHP + " more hits!");
-                        } else if (text == true && compHP > 5) {
-                            System.out.println("Your opponent can take " + compHP + " more hits!");
-                        }
-                    }
-                } else {
-                    //if user inputs wrong data
-                    System.out.println("Invalid Attack\nTry again");
-                    validAction = false;
-                }
-            } while (validAction == false);
-
-            if (compHP <= 0 || userHP <= 0) {
-                break;
-            }
-            if (Stats == true) {
-                System.out.println("*************************************");
-                System.out.println("You                          Opponent");
-                System.out.format("HP:%2d                        HP: %d\n", userHP, compHP);
-                System.out.format("CP:%2d                        CP: %d\n", consecutiveAttacks, consecutiveCompAttacks);
-                System.out.println("CB: " + consecutiveBlocks + "                        CB: " + consecutiveCompBlocks);
-            }
-            System.out.println("**************DEFEND*****************"); // print stars for less confusion
-
-            //end of code for user attack
-            //start code for user defend
-            do {
-                validAction = false;
-                System.out.println("Choose where to block: legblock, stomachblock, or headblock");
-                userAction = input.nextLine();
-                userAction = userAction.toLowerCase();
-                if (userAction.equals("legblock") || userAction.equals("stomachblock") || userAction.equals("headblock")) {
-                    validAction = true;
-                    compAction = generator.nextInt(3) + 1;
-                    switch (compAction) {
-                        case 1:
-                            compActionString = "legblock";
-                            break;
-                        case 2:
-                            compActionString = "stomachblock";
-                            break;
-                        case 3:
-                            compActionString = "headblock";
-                    }//find out where comp poked
-
-                    //custom messages for user blocking right part
-                    if (userAction.equals(compActionString)) {
-                        consecutiveBlocks = consecutiveBlocks + 1; // add one block for the user
-                        if (consecutiveCompAttacks >= 3) {
-                            if (text == true) {
-                                System.out.println("You ended your opponent's poking spree!\nYou got +" + consecutiveCompAttacks + " HP!");
-                            }
-                            userHP = userHP + consecutiveCompAttacks;
-                        }
-                        consecutiveCompAttacks = 0;
-                        if (text == true) {
-                            switch (compActionString) {
-                                case "legblock":
-                                    System.out.println("Your opponent tried to poke your leg\nBut you blocked their poke!\nYou took no damage!");
-                                    break;
-                                case "stomachblock":
-                                    System.out.println("Your opponent tried to poke your stomach\nBut you blocked their poke!\nYou took no damage!");
-                                    break;
-                                case "headblock":
-                                    System.out.println("Your opponent tried to poke your head\nBut you blocked their poke!\nYou took no damage!");
-                            }
-                        }
-                    } else {
-                        //if user blocked wrong part then,
-                        consecutiveCompAttacks = consecutiveCompAttacks + 1; // add one attack for comp
-                        if (consecutiveBlocks >= 3) {
-                            if (text == true) {
-                                System.out.println("Your opponent has ended your blocking spree!\nYour opponent got +" + consecutiveBlocks + " HP!");
-                            }
-                            compHP = compHP + consecutiveBlocks;
-                        }
-                        consecutiveBlocks = 0;
-                        if (text == true) {
-                            switch (compAction) {//tell user what happened
-                                case 1:
-                                    System.out.println("Your opponent poked your leg!");
-                                    break;
-                                case 2:
-                                    System.out.println("Your opponent poked your stomach!");
-                                    break;
-                                case 3:
-                                    System.out.println("Your opponent poked your head!");
-                            }
-                        }
-                        //code for changing values becuase user got hit
-                        crit = generator.nextInt(compHP);
-                        if (crit == 0) {
-                            if (text == true) {
-                                System.out.println("Your opponent's poke was super effective!\nIt dealt 3 damage!");
-                            } else {
-                                System.out.println("Super Effective Poke!");
-                            }
-                            userHP = userHP - 3;
-                        } else {
-                            if (text == true) {
-                                System.out.println("Your opponent's poke was not very effective...\nIt only dealt 1 damage...");
-                            }
-                            userHP = userHP - 1; // make comp take damage
-                        }
-                    }
-                    if (consecutiveBlocks == 3) {
-                        if (text == true) {
-                            System.out.println("Blocking Spree!\nYour opponent lost 3 HP!");
-                        }
-                        compHP = compHP - 3;
-                    } else if (consecutiveBlocks == 4) {
-                        if (text == true) {
-                            System.out.println("Blocking Spree!\nYour opponent lost 1 HP!");
-                        }
-                        compHP = compHP - 1;
-                    } else if (consecutiveBlocks == 5) {
-                        if (text == true) {
-                            System.out.println("Super Blocking Spree!\nYour opponent lost 5 HP!");
-                        }
-                        compHP = compHP - 5;
-                    } else if (consecutiveBlocks == 6 || consecutiveBlocks == 7 || consecutiveBlocks == 8 || consecutiveBlocks == 9) {
-                        if (text == true) {
-                            System.out.println("Super Blocking Spree!\nYour opponent lost 2 HP!");
-                        }
-                        compHP = compHP - 2;
-                    } else if (consecutiveBlocks == 10) {
-                        if (text == true) {
-                            System.out.println("Legendary Blocking Spree!\nYour opponent lost 10 HP!");
-                        }
-                        compHP = compHP - 10;
-                    } else if (consecutiveBlocks >= 11) {
-                        {
-                            System.out.println("Legendary Blocking Spree!\nYour opponent lost 3 HP!");
-                        }
-                        compHP = compHP - 3;
-                    }
-
-                    if (consecutiveCompAttacks == 3) {
-                        if (text == true) {
-                            System.out.println("Your opponent is on a Poking Spree!\nYou lost 3 HP!");
-                        }
-                        userHP = userHP - 3;
-                    } else if (consecutiveCompAttacks == 4) {
-                        if (text == true) {
-                            System.out.println("Your opponent is on a Poking Spree!\nYou lost 1 HP!");
-                        }
-                        userHP = userHP - 1;
-                    } else if (consecutiveCompAttacks == 5) {
-                        if (text == true) {
-                            System.out.println("Your opponent is on a Super Poking Spree!\nYou lost 5 HP!");
-                        }
-                        userHP = userHP - 5;
-                    } else if (consecutiveCompAttacks == 6 || consecutiveCompAttacks == 7 || consecutiveCompAttacks == 8 || consecutiveCompAttacks == 9) {
-                        if (text == true) {
-                            System.out.println("Your opponent is on a Super Poking Spree!\nYou lost 2 HP!");
-                        }
-                        userHP = userHP - 2;
-                    } else if (consecutiveCompAttacks == 10) {
-                        if (text == true) {
-                            System.out.println("Your opponent is on a Legendary Poking Spree!\nYou lost 10 HP!");
-                        }
-                        userHP = userHP - 10;
-                    } else if (consecutiveCompAttacks >= 11) {
-                        if (text == true) {
-                            System.out.println("Your opponent is on a Legendary Poking Spree!\nYou lost 3 HP!");
-                        }
-                        userHP = userHP - 3;
-                    }
-                    //tell user how many hp they have left
-                    if (userHP <= 0 && text == true) {
-                        System.out.println("You fainted!\nBetter luck next time!");
-                    } else if (userHP == 1 && text == true) {
-                        System.out.println("You can only take 1 more hit!");
-                    } else {
-                        if (userHP <= 5 && text == true) {
-                            System.out.println("You can only take " + userHP + " more hits!");
-                        } else if (text == true && userHP > 5) {
-                            System.out.println("You can take " + userHP + " more hits!");
-                        }
-                    }
-                } else {
-                    System.out.println("Invalid block\nTry again");
-                    validAction = false;
-                }
-            } while (validAction == false);
-
-        } while (userHP > 0 && compHP > 0);
+        fightSequence(input);
         if (userHP <= 0) {
             System.out.println("*************************************");
             System.out.println("********YOU FAILED YOUR TEST*********");
@@ -632,16 +357,32 @@ public class DojoClass {
 
 
     void spar(Scanner input) {
-        Random generator = new Random();
-        userHP = findUserHP();
-        compHP = getcompHP();
-        consecutiveAttacks = 0;
-        consecutiveBlocks = 0;
-        consecutiveCompBlocks = 0;
-        consecutiveCompAttacks = 0;
+        setFightingVars(0,0);
         System.out.println("*************************************");
         System.out.println("***********TIME TO SPAR!*************");
-        do {
+        fightSequence(input);
+        if (userHP <= 0) {
+            System.out.println("*************************************");
+            System.out.println("*********YOU LOST THE MATCH**********");
+            System.out.println("*************************************");
+            userHP = 0;
+        }
+        if (compHP <= 0) {
+            System.out.println("*************************************");
+            System.out.println("**********YOU WON THE MATCH**********");
+            System.out.println("*************************************");
+            compHP = 0;
+        }
+        System.out.println("");
+        System.out.println("*************FINAL SCORE*************");
+        System.out.println("Your HP: " + userHP + "           Opponent HP: " + compHP);
+        System.out.println("*************************************");
+        System.out.println("");
+    }
+
+    void fightSequence(Scanner input){
+    	Random generator = new Random();
+    	do {
             //start user attack
             do {
                 if (Stats == true) {
@@ -988,26 +729,14 @@ public class DojoClass {
             } while (validAction == false);
 
         } while (userHP > 0 && compHP > 0);
-        if (userHP <= 0) {
-            System.out.println("*************************************");
-            System.out.println("*********YOU LOST THE MATCH**********");
-            System.out.println("*************************************");
-            userHP = 0;
-        }
-        if (compHP <= 0) {
-            System.out.println("*************************************");
-            System.out.println("**********YOU WON THE MATCH**********");
-            System.out.println("*************************************");
-            compHP = 0;
-        }
-        System.out.println("");
-        System.out.println("*************FINAL SCORE*************");
-        System.out.println("Your HP: " + userHP + "           Opponent HP: " + compHP);
-        System.out.println("*************************************");
-        System.out.println("");
-
+    	if(userHP < 0){
+    		userHP = 0;
+    	}
+    	if(compHP < 0){
+    		compHP = 0;
+    	}
     }
-
+    
     int getcompHP() {
         if (rank.equals("Peasant")) {
             return 1;
