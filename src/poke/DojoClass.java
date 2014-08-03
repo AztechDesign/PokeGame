@@ -1,10 +1,11 @@
+package poke;
 
 import javax.swing.JOptionPane;
 import java.util.Random;
 import java.util.Scanner;
 import java.util.InputMismatchException;
 
-public class EditorClass {
+public class DojoClass {
 
     private String rank;
     private String action;
@@ -31,7 +32,8 @@ public class EditorClass {
     private int c;
     private int place;
     private String settingThing;
-    EditorClass() {
+    
+    DojoClass() {
         rank = "Peasant";
         classes = 0;
         classesNeeded = 10;

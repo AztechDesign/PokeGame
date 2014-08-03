@@ -527,6 +527,7 @@ public class BankClass {
 	    		return lemonGuts;
     		default:
 	    		JOptionPane.showMessageDialog(null, "ERROR BANKCLASS 530", "ERROR", JOptionPane.ERROR_MESSAGE);
+	    		return 0;
     	}
 	}
 
