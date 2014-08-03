@@ -4,7 +4,7 @@ import java.util.Random;
 import java.util.Scanner;
 import java.util.InputMismatchException;
 
-public class DojoClass {
+public class EditorClass {
 
     private String rank;
     private String action;
@@ -30,8 +30,8 @@ public class DojoClass {
     private int b;
     private int c;
     private int place;
-
-    DojoClass() {
+    private String settingThing;
+    EditorClass() {
         rank = "Peasant";
         classes = 0;
         classesNeeded = 10;
@@ -44,7 +44,7 @@ public class DojoClass {
      */
     //*********************************************************************************************************************************************************
     String Enter(Scanner input) {
-        System.out.println("Welcome to the dojo!\nThe higher rank you are, the faster you can poke!\nType register to register for classes\nType train to participate in classes\nType test to test for your next rank\nType tournament to register and participate in a tournament\nType ranking to see your ranking\nType help for more information about the dojo");
+        System.out.println("Welcome to the dojo!\nThe higher rank you are, the faster you can poke!\nType register to register for classes\nType train to participate in classes\nType test to test for your next rank\nType tournament to register and participate in a tournament\nType ranking to see your ranking\nType help for more information about the dojo\nType settings to view and change fighting settings");
         if (classes == 1) {
             System.out.println("You have 1 paid for class!");
         } else {
@@ -209,14 +209,54 @@ public class DojoClass {
     }
 
     //*********************************************************************************************************************************************************
+    
+    void settings(Scanner input){
+    	System.out.println("***************SETTINGS**************");
+    	if(Stats == true){
+    		System.out.println("Stats: ON");
+    	}else{
+    		System.out.println("Stats: OFF");
+    	}
+    	System.out.println("");
+    	if(text == true){
+    		System.out.println("Text: ON");
+    	}else{
+    		System.out.println("Text: OFF");
+    	}
+    	System.out.println("");
+    	System.out.println("Type toggletext to toggle text\nType togglestats to toggle stats\nType leave to leave");
+    	do{
+    		settingThing = input.nextLine();
+    		settingThing = settingThing.toLowerCase();
+    		if(settingThing.equals("toggletext")){
+    			if(text == true){
+    				text = false;
+    			}else{
+    				text = true;
+    			}
+    		}else if(settingThing.equals("togglestats")){
+    			if(Stats == true){
+    				Stats = false;
+    			}else{
+    				Stats = true;
+    			}
+    		}else if(settingThing.equals("leave")){
+    			//DO NOTHING!!!
+    		}else{
+    			settingThing = "toggletext"; // it becomes toggle text so that it loops again
+    			System.out.println("Invalid option, please try again\nType toggletext to toggle text"
+    					+ "\nType togglestats to toggle stats\nType leave to leave");
+    		}
+    	}while(settingThing.equals("toggletext") || settingThing.equals("togglestats"));
+    }
+    
     /*
     simple methods start here
     */    
-    
     int ninjaTournament(Scanner input){
     	Random generator = new Random();
     	System.out.println("*************************************");
-        System.out.println("*********NINJA TOURNAMENT!***********");
+    	System.out.println("*********NINJA TOURNAMENT!***********");
         System.out.println("*************************************");
         System.out.println("*********QUALIFYING ROUND!***********");
         setFightingVars(0,0);
@@ -738,75 +778,78 @@ public class DojoClass {
     }
     
     int getcompHP() {
-        if (rank.equals("Peasant")) {
-            return 1;
-        } else if (rank.equals("Ninja Trainee")) {
-            return 2;
-        } else if (rank.equals("Ninja Amateur")) {
-            return 3;
-        } else if (rank.equals("Ninja")) {
-            return 4;
-        } else if (rank.equals("Ninja Pro")) {
-            return 5;
-        } else if (rank.equals("Ninja Instructor")) {
-            return 6;
-        } else if (rank.equals("Samurai Trainee")) {
-            return 7;
-        } else if (rank.equals("Samurai Amateur")) {
-            return 8;
-        } else if (rank.equals("Samurai")) {
-            return 9;
-        } else if (rank.equals("Samurai Pro")) {
-            return 10;
-        } else if (rank.equals("Samurai Instructor")) {
-            return 11;
-        } else if (rank.equals("Assistant Sensei")) {
-            return 12;
-        } else if (rank.equals("Sensei")) {
-            return 13;
-        } else if (rank.equals("Dayimo")) {
-            return 14;
-        } else {
-            return 15;
-        }
+    	switch(rank){
+    		case "Peasant":
+    			return 1;
+    		case "Ninja Trainee":
+    			return 2;
+    		case "Ninja Amateur":
+    			return 3;
+    		case "Ninja":
+    			return 4;
+    		case "Ninja Pro":
+    			return 5;
+    		case "Ninja Instructor":
+    			return 6;
+    		case "Samurai Trainee":
+    			return 7;
+    		case "Samurai Amateur":
+    			return 8;
+    		case "Samurai":
+    			return 9;
+    		case "Samurai Pro":
+    			return 10;
+    		case "Samurai Instructor":
+    			return 11;
+    		case "Assistant Sensei":
+    			return 12;
+    		case "Sensei":
+    			return 13;
+    		case "Dayimo":
+    			return 14;
+    		case "Emperor":
+    			return 15;
+			default:
+				return 100000;
+    	}
     }
-
     String getRank() {
         return rank;
     }//end of rank getter
 
     int findCostPerClass() {
-        if (rank.equals("Peasant")) {
-            return 500;
-        } else if (rank.equals("Ninja Trainee")) {
-            return 1000;
-        } else if (rank.equals("Ninja Amateur")) {
-            return 2500;
-        } else if (rank.equals("Ninja")) {
-            return 5000;
-        } else if (rank.equals("Ninja Pro")) {
-            return 7500;
-        } else if (rank.equals("Ninja Instructor")) {
-            return 10000;
-        } else if (rank.equals("Samurai Trainee")) {
-            return 25000;
-        } else if (rank.equals("Samurai Amateur")) {
-            return 50000;
-        } else if (rank.equals("Samurai")) {
-            return 75000;
-        } else if (rank.equals("Samurai Pro")) {
-            return 100000;
-        } else if (rank.equals("Samurai Instructor")) {
-            return 250000;
-        } else if (rank.equals("Assistant Sensei")) {
-            return 500000;
-        } else if (rank.equals("Sensei")) {
-            return 750000;
-        } else if (rank.equals("Dayimo")) {
-            return 1000000;
-        } else {
-            return 0;
-        }
+    	switch(rank){
+			case "Peasant":
+				return 500;
+			case "Ninja Trainee":
+				return 1000;
+			case "Ninja Amateur":
+				return 2500;
+			case "Ninja":
+				return 5000;
+			case "Ninja Pro":
+				return 7500;
+			case "Ninja Instructor":
+				return 10000;
+			case "Samurai Trainee":
+				return 25000;
+			case "Samurai Amateur":
+				return 50000;
+			case "Samurai":
+				return 75000;
+			case "Samurai Pro":
+				return 100000;
+			case "Samurai Instructor":
+				return 250000;
+			case "Assistant Sensei":
+				return 500000;
+			case "Sensei":
+				return 750000;
+			case "Dayimo":
+				return 1000000;
+			default:
+				return 0;
+    	}
     }//end of cost of class method
 
     int findFee() {
@@ -817,103 +860,111 @@ public class DojoClass {
     }//end of test fee finder
 
     String findNewRank() {
-        if (rank.equals("Peasant")) {
-            return "Ninja Trainee";
-        } else if (rank.equals("Ninja Trainee")) {
-            return "Ninja Amateur";
-        } else if (rank.equals("Ninja Amateur")) {
-            return "Ninja";
-        } else if (rank.equals("Ninja")) {
-            return "Ninja Pro";
-        } else if (rank.equals("Ninja Pro")) {
-            return "Ninja Instructor";
-        } else if (rank.equals("Ninja Instructor")) {
-            return "Samurai Trainee";
-        } else if (rank.equals("Samurai Trainee")) {
-            return "Samurai Amateur";
-        } else if (rank.equals("Samurai Amateur")) {
-            return "Samurai";
-        } else if (rank.equals("Samurai")) {
-            return "Samurai Pro";
-        } else if (rank.equals("Samurai Pro")) {
-            return "Samurai Instructor";
-        } else if (rank.equals("Samurai Instructor")) {
-            return "Assistant Sensei";
-        } else if (rank.equals("Assistant Sensei")) {
-            return "Sensei";
-        } else if (rank.equals("Sensei")) {
-            return "Dayimo";
-        } else if (rank.equals("Dayimo")) {
-            return "Emperor";
-        }
-        return "";
+    	switch(rank){
+			case "Peasant":
+				return "Ninja Trainee";
+			case "Ninja Trainee":
+				return "Ninja Amateur";
+			case "Ninja Amateur":
+				return "Ninja";
+			case "Ninja":
+				return "Ninja Pro";
+			case "Ninja Pro":
+				return "Ninja Instructor";
+			case "Ninja Instructor":
+				return "Samurai Trainee";
+			case "Samurai Trainee":
+				return "Samurai Amateur";
+			case "Samurai Amateur":
+				return "Samurai";
+			case "Samurai":
+				return "Samurai Pro";
+			case "Samurai Pro":
+				return "Samurai Instructor";
+			case "Samurai Instructor":
+				return "Assistant Sensei";
+			case "Assistant Sensei":
+				return "Sensei";
+			case "Sensei":
+				return "Dayimo";
+			case "Dayimo":
+				return "Emperor";
+			default:
+				return "DOJO 855";
+    	}
+       
     }
 
     int findClassesNeeded() {
-        if (rank.equals("Peasant")) {
-            return 10;
-        } else if (rank.equals("Ninja Trainee")) {
-            return 25;
-        } else if (rank.equals("Ninja Amateur")) {
-            return 50;
-        } else if (rank.equals("Ninja")) {
-            return 75;
-        } else if (rank.equals("Ninja Pro")) {
-            return 100;
-        } else if (rank.equals("Ninja Instructor")) {
-            return 125;
-        } else if (rank.equals("Samurai Trainee")) {
-            return 150;
-        } else if (rank.equals("Samurai Amateur")) {
-            return 175;
-        } else if (rank.equals("Samurai")) {
-            return 200;
-        } else if (rank.equals("Samurai Pro")) {
-            return 225;
-        } else if (rank.equals("Samurai Instructor")) {
-            return 250;
-        } else if (rank.equals("Assistant Sensei")) {
-            return 275;
-        } else if (rank.equals("Sensei")) {
-            return 300;
-        } else if (rank.equals("Dayimo")) {
-            return 325;
-        }//empty stuff
-        return 0;
+    	switch(rank){
+			case "Peasant":
+				return 10;
+			case "Ninja Trainee":
+				return 25;
+			case "Ninja Amateur":
+				return 50;
+			case "Ninja":
+				return 75;
+			case "Ninja Pro":
+				return 100;
+			case "Ninja Instructor":
+				return 125;
+			case "Samurai Trainee":
+				return 150;
+			case "Samurai Amateur":
+				return 175;
+			case "Samurai":
+				return 200;
+			case "Samurai Pro":
+				return 225;
+			case "Samurai Instructor":
+				return 250;
+			case "Assistant Sensei":
+				return 275;
+			case "Sensei":
+				return 300;
+			case "Dayimo":
+				return 325;
+			default:
+				return 10000;
+    	}
     }//end of findClassesNeeded method
 
     int getSpeed() {
-        if (rank.equals("Peasant")) {
-            return 75;
-        } else if (rank.equals("Ninja Trainee")) {
-            return 70;
-        } else if (rank.equals("Ninja Amateur")) {
-            return 65;
-        } else if (rank.equals("Ninja")) {
-            return 60;
-        } else if (rank.equals("Ninja Pro")) {
-            return 55;
-        } else if (rank.equals("Ninja Instructor")) {
-            return 50;
-        } else if (rank.equals("Samurai Trainee")) {
-            return 45;
-        } else if (rank.equals("Samurai Amateur")) {
-            return 40;
-        } else if (rank.equals("Samurai")) {
-            return 35;
-        } else if (rank.equals("Samurai Pro")) {
-            return 30;
-        } else if (rank.equals("Samurai Instructor")) {
-            return 25;
-        } else if (rank.equals("Assistant Sensei")) {
-            return 20;
-        } else if (rank.equals("Sensei")) {
-            return 15;
-        } else if (rank.equals("Dayimo")) {
-            return 10;
-        } else if (rank.equals("Emperor")) {
-            return 5;
-        }
-        return 0;
-    }// end of main
+    	switch(rank){
+    		case "Peasant":
+    			return 75;
+    		case "Ninja Trainee":
+    			return 70;
+    		case "Ninja Amateur":
+    			return 65;
+    		case "Ninja":
+    			return 60;
+    		case "Ninja Pro":
+    			return 55;
+    		case "Ninja Instructor":
+    			return 50;
+    		case "Samurai Trainee":
+    			return 45;
+    		case "Samurai Amateur":
+    			return 40;
+    		case "Samurai":
+    			return 35;
+    		case "Samurai Pro":
+    			return 30;
+    		case "Samurai Instructor":
+    			return 25;
+    		case "Assistant Sensei":
+    			return 20;
+    		case "Sensei":
+    			return 15;
+    		case "Dayimo":
+    			return 10;
+    		case "Emperor":
+    			return 5;
+    		default:
+    			return 5000;
+    	}
+    }// end of get speed
 }//end of class
+
