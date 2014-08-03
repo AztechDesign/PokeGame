@@ -86,9 +86,10 @@ public class ShopClass {
 	    random = generator.nextInt(100) + 1;
 	    if(random >= 1 && random <= 10 && friends == false){
 	        questionAsk(input);
+	    }else{
+	    	System.out.println("Welcome to Gotta' Buy It ALL!\nType the appropriate command to buy upgrades\nType leave to leave");
 	    }
 	    findDiscount();
-	    System.out.println("Welcome to Gotta' Buy It ALL!\nType the appropriate command to buy upgrades\nType leave to leave");
 	    sharpenedNailsMessage();
 	    flamingPokeMessage();
 	    pointMultiplierMessage();
@@ -125,7 +126,7 @@ public class ShopClass {
 	}
 	
 	void questionAsk(Scanner input){
-	    System.out.println("Hello!\nI am the shopkeeper!\nPlease tell me, who is your favorite pokÃ©mon?");
+	    System.out.println("Hello!\nI am the shopkeeper!\nPlease tell me, who is your favorite pokémon?");
 	    answer = input.nextLine();
 	    converAnswer = answer.toLowerCase();
 	    if(converAnswer.equals("snorlax")){
@@ -133,6 +134,11 @@ public class ShopClass {
 	        friends = true;
 	    }else{
 	        System.out.println("Oh");
+	        try{
+	        	Thread.sleep(2000);
+	        }catch(Excpetionn e){
+	        	//DO NOTHING!
+	        }
 	    }
 	}
 	

@@ -46,7 +46,11 @@ public class DojoClass {
      */
     //*********************************************************************************************************************************************************
     String Enter(Scanner input) {
-        System.out.println("Welcome to the dojo!\nThe higher rank you are, the faster you can poke!\nType register to register for classes\nType train to participate in classes\nType test to test for your next rank\nType tournament to register and participate in a tournament\nType ranking to see your ranking\nType help for more information about the dojo\nType settings to view and change fighting settings");
+        System.out.println("Welcome to the dojo!\nThe higher rank you are, the fas"
+        		+ "ter you can poke!\nType register to register for classes\nType train to participate in classes\n"
+        		+ "Type test to test for your next rank\nType tournament to register and participate in a tournament\nType ranking t"
+        		+ "o see your ranking\nType help for more information about the dojo\nType settings to view and change f"
+        		+ "ighting settings\nType leave to leave");
         if (classes == 1) {
             System.out.println("You have 1 paid for class!");
         } else {
@@ -60,6 +64,7 @@ public class DojoClass {
         }
         System.out.println("Your rank is: " + rank);
         action = input.nextLine();
+        action = action.toLowerCase();
         return action;
 
     }//end of enter method

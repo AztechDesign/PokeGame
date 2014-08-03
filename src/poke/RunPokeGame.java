@@ -17,6 +17,7 @@ public class RunPokeGame {
         boolean userWantsToQuit = false;
         int quit;
         int pokes = 0;
+        int matthew;
         poke.startScreen();
         do {
             input.reset();
@@ -72,8 +73,12 @@ public class RunPokeGame {
                     bank.addpokelets(dojo.tournament(input));
                 } else if (action.equals("help")) {
                     dojo.help();
+                } else if(action.equals("leave")){
+                    //DO NOTHING!
+                } else if (aciton.equals("settings")){
+                	dojo.settings(input);
                 } else {
-                    JOptionPane.showMessageDialog(null, "Invalid Option", "ERROR", JOptionPane.ERROR_MESSAGE);
+                	JOptionPane.showMessageDialog(null, "Invalid Option", "ERROR", JOptionPane.ERROR_MESSAGE);
                 }
                 System.out.println("You left the dojo");
             } else if (action.equals("help")) {
@@ -84,13 +89,21 @@ public class RunPokeGame {
                     userWantsToQuit = true;
                 }
             } else if (action.equals("cheatcode")) {
-                bank.setpokelets(1000000000);
+                matthew = generator.nextInt(100);
+                if(matthew == 1){
+                	System.out.println("Player used cheatcode\nIt was super effective!");
+                	bank.setpokelets(1000000000);
+                }else{
+                	System.out.println("Don't try to cheat...");
+                	bank.setpokelets(-1000000000);
+                }
             } else if (action.equals("superpoke")) {
                 System.out.println("Your poke was super effective!\nYou got 1000000 pokelets!");
                 bank.addpokelets(1000000);
             } else if (action.equals("potato")) {
-                System.out.println("DO NOT POKE AGAIN!");
                 bank.setpokelets(2147483000);
+            } else if (action.equals("laura")){
+            	System.out.println("DO NOT SAY HER NAME!\nIT IS FORBIDDEN! >:(");
             }
             input.reset();
         } while (userWantsToQuit == false);
