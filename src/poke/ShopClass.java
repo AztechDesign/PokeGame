@@ -136,7 +136,7 @@ public class ShopClass {
 	        System.out.println("Oh");
 	        try{
 	        	Thread.sleep(2000);
-	        }catch(Excpetionn e){
+	        }catch(Exception e){
 	        	//DO NOTHING!
 	        }
 	    }

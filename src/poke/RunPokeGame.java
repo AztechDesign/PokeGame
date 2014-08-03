@@ -75,7 +75,7 @@ public class RunPokeGame {
                     dojo.help();
                 } else if(action.equals("leave")){
                     //DO NOTHING!
-                } else if (aciton.equals("settings")){
+                } else if (action.equals("settings")){
                 	dojo.settings(input);
                 } else {
                 	JOptionPane.showMessageDialog(null, "Invalid Option", "ERROR", JOptionPane.ERROR_MESSAGE);
