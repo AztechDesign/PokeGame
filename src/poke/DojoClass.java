@@ -527,31 +527,43 @@ public class DojoClass {
                     if (consecutiveAttacks == 3) {
                         if (text == true) {
                             System.out.println("Poking Spree!\nYour opponent lost 3 HP!");
+                        }else{
+                        	System.out.println("Poking Spree!");
                         }
                         compHP = compHP - 3;
                     } else if (consecutiveAttacks == 4) {
                         if (text == true) {
                             System.out.println("Poking Spree!\nYour opponent lost 1 HP!");
+                        }else{
+                        	System.out.println("Poking Spree!");
                         }
                         compHP = compHP - 1;
                     } else if (consecutiveAttacks == 5) {
                         if (text == true) {
                             System.out.println("Super Poking Spree!\nYour opponent lost 5 HP!");
+                        }else{
+                        	System.out.println("Super Poking Spree!");
                         }
                         compHP = compHP - 5;
                     } else if (consecutiveAttacks == 6 || consecutiveAttacks == 7 || consecutiveAttacks == 8 || consecutiveAttacks == 9) {
                         if (text == true) {
                             System.out.println("Super Poking Spree!\nYour opponent lost 2 HP!");
+                        }else{
+                        	System.out.println("Super Poking Spree!");
                         }
                         compHP = compHP - 2;
                     } else if (consecutiveAttacks == 10) {
                         if (text == true) {
                             System.out.println("Legendary Poking Spree!\nYour opponent lost 10 HP!");
+                        }else{
+                        	System.out.println("Legendary Poking Spree!");
                         }
                         compHP = compHP - 10;
                     } else if (consecutiveAttacks >= 11) {
                         if (text == true) {
                             System.out.println("Legendary Poking Spree!\nYour opponent lost 3 HP!");
+                        }else{
+                        	System.out.println("Legendary Poking Spree!");
                         }
                         compHP = compHP - 3;
                     }
@@ -559,38 +571,48 @@ public class DojoClass {
                     if (consecutiveCompBlocks == 3) {
                         if (text == true) {
                             System.out.println("Your opponent is on a Blocking Spree!\nYou lost 3 HP!");
+                        } else{
+                        	System.out.println("Blocking Spree!");
                         }
                         userHP = userHP - 3;
                     } else if (consecutiveCompBlocks == 4) {
                         if (text == true) {
                             System.out.println("Your opponent is on a Blocking Spree!\nYou lost 1 HP!");
+                        }else{
+                        	System.out.println("Blocking Spree!");
                         }
                         userHP = userHP - 1;
                     } else if (consecutiveCompBlocks == 5) {
                         if (text == true) {
                             System.out.println("Your opponent is on a Super Blocking Spree!\nYou lost 5 HP!");
+                        }else{
+                        	System.out.println("Super Blocking Spree!");
                         }
                         userHP = userHP - 5;
                     } else if (consecutiveCompBlocks == 6 || consecutiveCompBlocks == 7 || consecutiveCompBlocks == 8 || consecutiveCompBlocks == 9) {
                         if (text == true) {
                             System.out.println("Your opponent is on a Super Blocking Spree!\nYou lost 2 HP!");
+                        }else{
+                        	System.out.println("Super Blocking Spree!");
                         }
                         userHP = userHP - 2;
                     } else if (consecutiveCompBlocks == 10) {
                         if (text == true) {
                             System.out.println("Your opponent is on a Legendary Blocking Spree!\nYou lost 10 HP!");
+                        }else{
+                        	System.out.println("Legendary Blocking Spree!");
                         }
                         userHP = userHP - 10;
                     } else if (consecutiveCompBlocks >= 11) {
                         if (text == true) {
                             System.out.println("Your opponent is on a Legendary Blocking Spree!\nYou lost 3 HP!");
+                        }else{
+                        	System.out.println("Legendary Blocking Spree!");
                         }
                         userHP = userHP - 3;
                     }
 
-                    if (compHP <= 0 && text == true) {
-                        System.out.println("Your opponent fainted!");
-                    } else if (compHP == 1 && text == true) {
+                    if (compHP == 1 && text == true) {
                         System.out.println("Your opponent can only take 1 more hit!");
                     } else {
                         if (compHP <= 5 && text == true) {
@@ -598,6 +620,10 @@ public class DojoClass {
                         } else if (text == true && compHP > 5) {
                             System.out.println("Your opponent can take " + compHP + " more hits!");
                         }
+                    }
+                    
+                    if(userHP <= 0 && text == true){
+                    	System.out.println("You fainted!\nBetter luck next time!");
                     }
                 } else {
                     //if user inputs wrong data
@@ -702,31 +728,43 @@ public class DojoClass {
                     if (consecutiveBlocks == 3) {
                         if (text == true) {
                             System.out.println("Blocking Spree!\nYour opponent lost 3 HP!");
+                        }else{
+                        	System.out.println("Blocking Spree!");
                         }
                         compHP = compHP - 3;
                     } else if (consecutiveBlocks == 4) {
                         if (text == true) {
                             System.out.println("Blocking Spree!\nYour opponent lost 1 HP!");
+                        }else{
+                        	System.out.println("Blocking Spree!");
                         }
                         compHP = compHP - 1;
                     } else if (consecutiveBlocks == 5) {
                         if (text == true) {
                             System.out.println("Super Blocking Spree!\nYour opponent lost 5 HP!");
+                        }else{
+                        	System.out.println("Super Blocking Spree!");
                         }
                         compHP = compHP - 5;
                     } else if (consecutiveBlocks == 6 || consecutiveBlocks == 7 || consecutiveBlocks == 8 || consecutiveBlocks == 9) {
                         if (text == true) {
                             System.out.println("Super Blocking Spree!\nYour opponent lost 2 HP!");
+                        }else{
+                        	System.out.println("Super Blocking Spree!");
                         }
                         compHP = compHP - 2;
                     } else if (consecutiveBlocks == 10) {
                         if (text == true) {
                             System.out.println("Legendary Blocking Spree!\nYour opponent lost 10 HP!");
+                        }else{
+                        	System.out.println("Legendary Blocking Spree!");
                         }
                         compHP = compHP - 10;
                     } else if (consecutiveBlocks >= 11) {
-                        {
+                        if (text == true){
                             System.out.println("Legendary Blocking Spree!\nYour opponent lost 3 HP!");
+                        }else{
+                        	System.out.println("Legendary Blocking Spree!");
                         }
                         compHP = compHP - 3;
                     }
@@ -734,38 +772,48 @@ public class DojoClass {
                     if (consecutiveCompAttacks == 3) {
                         if (text == true) {
                             System.out.println("Your opponent is on a Poking Spree!\nYou lost 3 HP!");
+                        }else{
+                        	System.out.println("Poking Spree!");
                         }
                         userHP = userHP - 3;
                     } else if (consecutiveCompAttacks == 4) {
                         if (text == true) {
                             System.out.println("Your opponent is on a Poking Spree!\nYou lost 1 HP!");
+                        }else{
+                        	System.out.println("Poking Spree!");
                         }
                         userHP = userHP - 1;
                     } else if (consecutiveCompAttacks == 5) {
                         if (text == true) {
                             System.out.println("Your opponent is on a Super Poking Spree!\nYou lost 5 HP!");
+                        }else{
+                        	System.out.println("Super Poking Spree!");
                         }
                         userHP = userHP - 5;
                     } else if (consecutiveCompAttacks == 6 || consecutiveCompAttacks == 7 || consecutiveCompAttacks == 8 || consecutiveCompAttacks == 9) {
                         if (text == true) {
                             System.out.println("Your opponent is on a Super Poking Spree!\nYou lost 2 HP!");
+                        }else{
+                        	System.out.println("Super Poking Spree!");
                         }
                         userHP = userHP - 2;
                     } else if (consecutiveCompAttacks == 10) {
                         if (text == true) {
                             System.out.println("Your opponent is on a Legendary Poking Spree!\nYou lost 10 HP!");
+                        }else{
+                        	System.out.println("Legendary Poking Spree!");
                         }
                         userHP = userHP - 10;
                     } else if (consecutiveCompAttacks >= 11) {
                         if (text == true) {
                             System.out.println("Your opponent is on a Legendary Poking Spree!\nYou lost 3 HP!");
+                        }else{
+                        	System.out.println("Legendary Poking Spree!");
                         }
                         userHP = userHP - 3;
                     }
                     //tell user how many hp they have left
-                    if (userHP <= 0 && text == true) {
-                        System.out.println("You fainted!\nBetter luck next time!");
-                    } else if (userHP == 1 && text == true) {
+                    if (userHP == 1 && text == true) {
                         System.out.println("You can only take 1 more hit!");
                     } else {
                         if (userHP <= 5 && text == true) {
@@ -781,10 +829,12 @@ public class DojoClass {
             } while (validAction == false);
 
         } while (userHP > 0 && compHP > 0);
-    	if(userHP < 0){
+    	if(userHP <= 0){
+    		System.out.println("You fainted!");
     		userHP = 0;
     	}
-    	if(compHP < 0){
+    	if(compHP <= 0){
+    		System.out.println("Your opponent fainted!");
     		compHP = 0;
     	}
     }
