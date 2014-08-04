@@ -45,7 +45,6 @@ public class PokeClass {
 		System.out.println("Type help for a list of commands");
 		System.out.println("Type quit to... you guessed it! Quit!");
 		System.out.println("You must buy everything in the shop to win.");
-		System.out.println("DO NOT PLAY WITH ECLIPSE FULL SCREEN! YOU SHOULD BE ABLE TO SEE THE CENTER OF YOUR DESKTOP AT ALL TIMES!");
 	}
 	int confirmQuit(){
 		quitOption = JOptionPane.showConfirmDialog(null, "Are you sure you want to quit? All progress will be lost", "Quit Confirmation", JOptionPane.YES_NO_OPTION);
