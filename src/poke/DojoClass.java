@@ -51,16 +51,21 @@ public class DojoClass {
         		+ "Type test to test for your next rank\nType tournament to register and participate in a tournament\nType ranking t"
         		+ "o see your ranking\nType help for more information about the dojo\nType settings to view and change f"
         		+ "ighting settings\nType leave to leave");
-        if (classes == 1) {
-            System.out.println("You have 1 paid for class!");
-        } else {
-            System.out.println("You have " + classes + " paid for classes!");
-        }
-
-        if (classesNeeded == 1) {
-            System.out.println("You only need to participate in 1 more class to be eligible to test!");
-        } else {
-            System.out.println("You need to participate in " + classesNeeded + " more classes to be eligible to test!");
+        if(classesNeeded = 0){
+        	System.out.println("You are eligible to test!");
+        	System.out.println("The testing fee is " + findFee());
+        }else{
+        	if (classes == 1) {
+        		System.out.println("You have 1 paid for class!");
+        	} else {
+        		System.out.println("You have " + classes + " paid for classes!");
+        	}
+        	
+        	if (classesNeeded == 1) {
+        		System.out.println("You only need to participate in 1 more class to be eligible to test!");
+        	} else {
+        		System.out.println("You need to participate in " + classesNeeded + " more classes to be eligible to test!");
+        	}
         }
         System.out.println("Your rank is: " + rank);
         action = input.nextLine();
@@ -224,13 +229,12 @@ public class DojoClass {
     	}else{
     		System.out.println("Stats: OFF");
     	}
-    	System.out.println("");
     	if(text == true){
     		System.out.println("Text: ON");
     	}else{
     		System.out.println("Text: OFF");
     	}
-    	System.out.println("");
+    	System.out.println("***************SETTINGS**************");
     	System.out.println("Type toggletext to toggle text\nType togglestats to toggle stats\nType leave to leave");
     	do{
     		settingThing = input.nextLine();
@@ -382,6 +386,7 @@ public class DojoClass {
     int testFight(Scanner input) {
         System.out.println("*************************************");
         System.out.println("***********TIME TO TEST!*************");
+        setFightingVars(0,getcompHP());
         fightSequence(input);
         if (userHP <= 0) {
             System.out.println("*************************************");
