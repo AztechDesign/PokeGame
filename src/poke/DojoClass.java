@@ -51,7 +51,7 @@ public class DojoClass {
         		+ "Type test to test for your next rank\nType tournament to register and participate in a tournament\nType ranking t"
         		+ "o see your ranking\nType help for more information about the dojo\nType settings to view and change f"
         		+ "ighting settings\nType leave to leave");
-        if(classesNeeded = 0){
+        if(classesNeeded == 0){
         	System.out.println("You are eligible to test!");
         	System.out.println("The testing fee is " + findFee());
         }else{
