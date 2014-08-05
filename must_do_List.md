@@ -28,3 +28,12 @@ then head on over to the Idea box and work on something there. Please delete the
     help site(s): Stackoverflow.com, google.com
     
 Zach- I will update this part later but for the moment just work on that or the idea box. Thx.
+
+-Bank Stuff
+    Difficulty = 1;
+    Importance = when we have time
+    people needed = 1
+    what to do =
+        add if statements so that when user is VIP of MilClub, the interface for when they enter the shop is dif.
+        e.g. don't say "you lose 0%" say like you are not taxed for your withdrawls
+        also, make them feel special :)
