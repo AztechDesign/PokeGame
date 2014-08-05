@@ -53,7 +53,7 @@ public class DojoClass {
         		+ "ighting settings\nType leave to leave");
         if(classesNeeded == 0){
         	System.out.println("You are eligible to test!");
-        	System.out.println("The testing fee is " + findFee());
+        	System.out.println("The testing fee is " + findFee() + " pokelets");
         }else{
         	if (classes == 1) {
         		System.out.println("You have 1 paid for class!");
@@ -79,18 +79,8 @@ public class DojoClass {
     int tournament(Scanner input) {
         if(rank.equals("Peasant")){
         	JOptionPane.showMessageDialog(null, "Peasants can not compete in tournaments", "ERROR", JOptionPane.ERROR_MESSAGE);
-        }else if(rank.substring(0,3).equals("Nin")){
-        	return ninjaTournament(input);
-        }else if(rank.substring(0,3).equals("Sam")){
-        	return samuraiTournament(input);
-        }else if(rank.equals("Assistant Sensei")){ 
-        	return assistSenTournament(input);	
-        }else if(rank.equals("Sensei")){   
-        	return senseiTournament(input);
-        }else if(rank.equals("Emperor")){
-        	return emperorTournament(input);
         }else{
-        	JOptionPane.showMessageDialog(null, "ERROR DOJOCLASS 83", "ERROR", JOptionPane.ERROR_MESSAGE);
+        	return tourFightSequence(input);
         }
         return 0;
     }
@@ -223,6 +213,7 @@ public class DojoClass {
     //*********************************************************************************************************************************************************
     
     void settings(Scanner input){
+    	do{
     	System.out.println("***************SETTINGS**************");
     	if(Stats == true){
     		System.out.println("Stats: ON");
@@ -234,18 +225,19 @@ public class DojoClass {
     	}else{
     		System.out.println("Text: OFF");
     	}
-    	System.out.println("***************SETTINGS**************");
+    	System.out.println("*************************************");
     	System.out.println("Type toggletext to toggle text\nType togglestats to toggle stats\nType leave to leave");
-    	do{
     		settingThing = input.nextLine();
     		settingThing = settingThing.toLowerCase();
     		if(settingThing.equals("toggletext")){
+    			System.out.println("Text has been toggled");
     			if(text == true){
     				text = false;
     			}else{
     				text = true;
     			}
     		}else if(settingThing.equals("togglestats")){
+    			System.out.println("Stats have been toggled");
     			if(Stats == true){
     				Stats = false;
     			}else{
@@ -264,10 +256,48 @@ public class DojoClass {
     /*
     simple methods start here
     */    
-    int ninjaTournament(Scanner input){
+    
+    int getTF(){
+    	//Could make switch of rank.substring(0,4), but seems like too much work
+    	//it is(0,4) because if it was 0,3 then for assistant sensei...
+    	if(rank.equals("Peasant")){
+        	JOptionPane.showMessageDialog(null, "Peasants can not compete in tournaments", "ERROR", JOptionPane.ERROR_MESSAGE);
+    	}else if(rank.substring(0,3).equals("Nin")){
+        	return 6250;
+        }else if(rank.substring(0,3).equals("Sam")){
+        	return 62500;
+        }else if(rank.equals("Assistant Sensei")){ 
+        	return 625000;
+        }else if(rank.equals("Sensei")){   
+        	return 6250000;
+        }else if(rank.equals("Emperor")){
+        	return 62500000;
+        }else{
+        	JOptionPane.showMessageDialog(null, "ERROR DOJOCLASS 282", "ERROR", JOptionPane.ERROR_MESSAGE);
+        }
+        return 0;
+    }
+    
+    void printTypeOfTournament(){
+    	if(rank.substring(0,3).equals("Nin")){
+    		System.out.println("*********NINJA TOURNAMENT!***********");
+        }else if(rank.substring(0,3).equals("Sam")){
+        	System.out.println("********SAMURAI TOURNAMENT!**********");
+        }else if(rank.equals("Assistant Sensei")){ 
+        	System.out.println("*****ASSISTANT SENSEI TOURNAMENT!****");
+        }else if(rank.equals("Sensei")){   
+        	System.out.println("*********SENSEI TOURNAMENT!**********");
+        }else if(rank.equals("Emperor")){
+        	System.out.println("********EMPEROR TOURNAMENT!**********");
+        }else{
+        	JOptionPane.showMessageDialog(null, "ERROR DOJOCLASS 291", "ERROR", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+    
+    int tourFightSequence(Scanner input){
     	Random generator = new Random();
     	System.out.println("*************************************");
-    	System.out.println("*********NINJA TOURNAMENT!***********");
+    	printTypeOfTournament();
         System.out.println("*************************************");
         System.out.println("*********QUALIFYING ROUND!***********");
         setFightingVars(0,0);
@@ -306,7 +336,7 @@ public class DojoClass {
             				System.out.println("You placed 4th out of 16");
             				break;
         				default:
-        					System.out.println("ERROR DOJOCLASS line 258");
+        					System.out.println("ERROR DOJOCLASS line 337");
             		}
             		System.out.println("Your performance proved that you deserve 0 pokelets");
             		return 0;
@@ -326,8 +356,8 @@ public class DojoClass {
                     	System.out.println("*******YOU WON THE TOURNAMENT!******");
                     	System.out.println("************************************");
                     	System.out.println("");
-                    	System.out.println("Your performance proved that you deserve 100000 pokelets!");
-                    	return 100000;
+                    	System.out.println("Your performance proved that you deserve " + (getTF()*16) + " pokelets!");
+                    	return (getTF()*16);
                 	}
             	}//advance to finals else if
         	}//advance to semi-finals else if
@@ -335,25 +365,6 @@ public class DojoClass {
         return 0;
     }
     
-   int samuraiTournament(Scanner input){
-    	//return 1,000,000.or.zero.if.they.lost;
-	   return 0;
-    }
-    
-    int assistSenTournament(Scanner input){
-    	//return 10,000,000.or.zero.if.they.lost;
-    	return 0;
-    }
-    
-    int senseiTournament(Scanner input){
-    	//return 100,000,000.or.zero.if.they.lost;
-    	return 0;
-    }
-    
-    int emperorTournament(Scanner input){
-    	//return 1,000,000,000.or.zero.if.they.lost;
-    	return 0;
-    }
     int findUserHP() {
         if (rank.equals("Peasant")) {
             return 3;
@@ -615,7 +626,7 @@ public class DojoClass {
                     if (compHP == 1 && text == true) {
                         System.out.println("Your opponent can only take 1 more hit!");
                     } else {
-                        if (compHP <= 5 && text == true) {
+                        if (compHP <= 5 && text == true && compHP > 1) {
                             System.out.println("Your opponent can only take " + compHP + " more hits!");
                         } else if (text == true && compHP > 5) {
                             System.out.println("Your opponent can take " + compHP + " more hits!");
@@ -816,7 +827,7 @@ public class DojoClass {
                     if (userHP == 1 && text == true) {
                         System.out.println("You can only take 1 more hit!");
                     } else {
-                        if (userHP <= 5 && text == true) {
+                        if (userHP <= 5 && text == true && userHP > 1) {
                             System.out.println("You can only take " + userHP + " more hits!");
                         } else if (text == true && userHP > 5) {
                             System.out.println("You can take " + userHP + " more hits!");

@@ -70,7 +70,18 @@ public class RunPokeGame {
                 } else if (action.equals("ranking")) {
                     dojo.ranking();
                 } else if (action.equals("tournament")) {
-                    bank.addpokelets(dojo.tournament(input));
+                	if(dojo.getTF() == 0){
+                		//DO NOTHING!!!
+                	}else{
+                		if(bank.getpokelets() >= dojo.getTF()){
+                			bank.subtractpokelets(dojo.getTF());
+                			bank.addpokelets(dojo.tournament(input));
+                		}else{
+                			System.out.println("You could not pay the fee to enter the tournament");
+                			System.out.println("You needed " + (dojo.getTF() - bank.getpokelets()) + " more pokelets");
+                		}
+                		bank.addpokelets(dojo.tournament(input));
+                	}
                 } else if (action.equals("help")) {
                     dojo.help();
                 } else if(action.equals("leave")){
