@@ -21,12 +21,12 @@ public class BankClass {
     }
 
     void Enter(Scanner input) {
-        System.out.println("Welcome to the bank!\nType deposit to deposit pokelets\nType withdraw to withdraw pokelets\nType upgrade to upgrade pokelets\nType leave to leave");
-        System.out.println("You have " + pokelets + " pokelets");
+        System.out.println("Welcome to the bank!\nType deposit to deposit pokelets\nType withdraw to withdraw pokelets\nType upgrade to upgrade your account\nType leave to leave");
+        System.out.println("You have " + pokelets + " pokelets in your account");
         System.out.println("You are a " + accountType);
         System.out.println("Your account can hold a maximum of " + findMaxBalance() + " pokelets");
         System.out.println("It costs " + findUpgradeCost() + " pokelets to upgrade your account");
-        System.out.println("When you withdraw pokelets, you lose " + (100 - taxWithdraw(100)) + "% of your pokelets");
+        System.out.println("When you withdraw pokelets, " + (100 - taxWithdraw(100)) + "% of your pokelets are taxed");
         System.out.println("You have " + bankBalance + " pokelets in the bank and " + pokelets + " pokelets in your wallet");
         action = input.nextLine();
         action = action.toLowerCase();
