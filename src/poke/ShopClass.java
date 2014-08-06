@@ -29,6 +29,8 @@ public class ShopClass {
 	private boolean boughtHairyFinger;
 	private boolean boughtSnotCoatedFinger;
 	private boolean boughtTitaniumFinger;
+        private boolean boughtGooeyFinger;
+        private boolean boughtSuperSteelFinger;
 	private boolean friends;
 	private boolean boughtBronzeMembership;
 	private boolean boughtSilverMembership;
@@ -68,10 +70,12 @@ public class ShopClass {
 		boughtPointQuadrupler = false;
 		boughtPointPentuplefier = false;
 		boughtFlamingPoke = false;
-	    boughtMetalFinger = false;
+	       boughtMetalFinger = false;
 		boughtHairyFinger = false;
 		boughtTitaniumFinger = false;
 		boughtSnotCoatedFinger = false;
+                boughtGooeyFinger = false;
+                boughtSuperSteelFinger = false;
 		boughtBronzeMembership = false;
 		boughtSilverMembership = false;
 		boughtGoldMembership = false;
@@ -126,7 +130,7 @@ public class ShopClass {
 	}
 	
 	void questionAsk(Scanner input){
-	    System.out.println("Hello!\nI am the shopkeeper!\nPlease tell me, who is your favorite pokémon?");
+	    System.out.println("Hello!\nI am the shopkeeper!\nPlease tell me, who is your favorite pokÃ©mon?");
 	    answer = input.nextLine();
 	    converAnswer = answer.toLowerCase();
 	    if(converAnswer.equals("snorlax")){
@@ -862,14 +866,32 @@ public class ShopClass {
 			System.out.println("being bitten even more");
 			System.out.println("command to buy:");
 			System.out.println("buysnotcoatedfinger");
-	    }else if(boughtSnotCoatedFinger == true){
+	    }else if(boughtSnotCoatedFinger == true && boughtGooeyFinger == false){
+
             System.out.println("*********************");
 			System.out.println("Hairy Finger");
 			System.out.println("Already Bought");
 			System.out.println("*********************");
 			System.out.println("Snot Coated Finger");
+        	        System.out.println("Already Bought");
+                        System.out.println("*********************");
+                        System.out.println("Gooey Finger");
+                        System.out.println("SOLD OUT");
+                        System.out.println("We will get a shipment in a later update");
+                        //System.out.println("Buy for " + (int)(2500000) + " pokelets");   
+                        //System.out.println("Decreases chance of ");
+			//System.out.println("being bitten even more");
+			//System.out.println("command to buy:");
+			//System.out.println("buygooeyfinger");
+	    }else if(boughtGooeyFInger == true){
+                System.out.println("Hairy Finger");
+			System.out.println("Already Bought");
+			System.out.println("*********************");
+			System.out.println("Snot Coated Finger");
         	System.out.println("Already Bought");
-	    }
+                        System.out.println("*********************");
+                        System.out.println("Gooey Finger");
+            }
 	}//end of hairy message
 	
 	void metallicMessage(){
