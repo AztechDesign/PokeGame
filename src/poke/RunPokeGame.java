@@ -80,7 +80,6 @@ public class RunPokeGame {
                 			System.out.println("You could not pay the fee to enter the tournament");
                 			System.out.println("You needed " + (dojo.getTF() - bank.getpokelets()) + " more pokelets");
                 		}
-                		bank.addpokelets(dojo.tournament(input));
                 	}
                 } else if (action.equals("help")) {
                     dojo.help();
