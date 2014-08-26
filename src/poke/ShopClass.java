@@ -230,73 +230,73 @@ public class ShopClass {
 	        }else{
 	            System.out.println("You already own Flaming Poke...\nWhy would you try to buy it again?!?!");
 	        }
-	    }else if(purchase.equals("buypointdoubler")){
+	    }else if(purchase.equals("buypokeletdoubler")){
 	        if(boughtPointDoubler == false){
 	            if(pokelets >= (int)(10000*discount)){
-                    System.out.println("You have bought Point Doubler for " + (int)(10000*discount) + " pokelets");
+                    System.out.println("You have bought Pokelet Doubler for " + (int)(10000*discount) + " pokelets");
 	                boughtPointDoubler = true;
 	                return (int)(10000*discount);
 	            }else{
-	                System.out.println("You do not have enough pokelets to buy Point Doubler");
+	                System.out.println("You do not have enough pokelets to buy Pokelet Doubler");
 	                difference = (int)(10000*discount) - pokelets;
 	                System.out.println("You need " + difference + " more pokelets");		                
 	            }
 	        }else{
-	            System.out.println("You already own Point Doubler...\nWhy would you try to buy it again?!?!");
+	            System.out.println("You already own Pokelet Doubler...\nWhy would you try to buy it again?!?!");
 	        }
-	    }else if(purchase.equals("buypointtripler")){
+	    }else if(purchase.equals("buypokelettripler")){
 	        if(boughtPointDoubler == true){
 	            if(boughtPointTripler == false){
 	                if(pokelets >= (int)(100000*discount)){
-	                    System.out.println("You have bought Point Tripler for " + (int)(100000*discount) + " pokelets");
+	                    System.out.println("You have bought Pokelet Tripler for " + (int)(100000*discount) + " pokelets");
 	                    boughtPointTripler = true;
 	                    return (int)(100000*discount);
 	                }else{
-	                    System.out.println("You do not have enough pokelets to buy Point Tripler");
+	                    System.out.println("You do not have enough pokelets to buy Pokelet Tripler");
 	                    difference = (int)(100000*discount) - pokelets;
 	                    System.out.println("You need " + difference + " more pokelets");
 	                }
 	            }else{
-	                System.out.println("You already own Point Tripler...\nWhy would you try to buy it again?!?!");    
+	                System.out.println("You already own Pokelet Tripler...\nWhy would you try to buy it again?!?!");    
 	            }
 	        }else{
-	            System.out.println("Point Tripler is locked\nUnlock it by buying Point Doubler");
+	            System.out.println("Pokelet Tripler is locked\nUnlock it by buying Pokelet Doubler");
 	        }
-	    }else if(purchase.equals("buypointquadrupler")){
+	    }else if(purchase.equals("buypokeletquadrupler")){
 	        if(boughtPointTripler == true){
 	            if(boughtPointQuadrupler == false){
 	                if(pokelets >= (int)(1000000*discount)){
-	                    System.out.println("You have bought Point Quadrupler for " + (int)(1000000*discount) + " pokelets");
+	                    System.out.println("You have bought Pokelet Quadrupler for " + (int)(1000000*discount) + " pokelets");
 	                    boughtPointQuadrupler = true;
 	                    return (int)(1000000*discount);	                    
 	                }else{
-                        System.out.println("You do not have enough pokelets to buy Point Quadrupler");
+                        System.out.println("You do not have enough pokelets to buy Pokelet Quadrupler");
 	                    difference = (int)(1000000*discount) - pokelets;
 	                    System.out.println("You need " + difference + " more pokelets");	                    
 	                }
 	            }else{
-	                System.out.println("You already own Point Quadrupler...\nWhy would you try to buy it again?!?!");
+	                System.out.println("You already own Pokelet Quadrupler...\nWhy would you try to buy it again?!?!");
 	            }
 	        }else{
-	            System.out.println("Point Quadrupler is locked\nUnlock it by buying Point Tripler");
+	            System.out.println("Pokelet Quadrupler is locked\nUnlock it by buying Pokelet Tripler");
 	        }
-	    }else if(purchase.equals("buypointpentuplefier")){
+	    }else if(purchase.equals("buypokeletpentuplefier")){
 	        if(boughtPointQuadrupler == true){
 	            if(boughtPointPentuplefier == false){
 	                if(pokelets >= (int)(10000000*discount)){
-	                    System.out.println("You have bought Point Pentuplefier for " + (int)(10000000*discount) + " pokelets");
+	                    System.out.println("You have bought Pokelet Pentuplefier for " + (int)(10000000*discount) + " pokelets");
 	                    boughtPointPentuplefier = true;
 	                    return (int)(10000000*discount);	 
 	                }else{
-	                    System.out.println("You do not have enough pokelets to buy Point Pentuplefier");
+	                    System.out.println("You do not have enough pokelets to buy Pokelet Pentuplefier");
 	                    difference = (int)(10000000*discount) - pokelets;
 	                    System.out.println("You need " + difference + " more pokelets");
 	                }
 	            }else{
-	                System.out.println("You already own Point Pentuplefier...\nWhy would you try to buy it again?!?!");
+	                System.out.println("You already own Pokelet Pentuplefier...\nWhy would you try to buy it again?!?!");
 	            }
 	        }else{
-	            System.out.println("Point Pentuplefier is locked\nUnlock it by buying Point Quadrupler");
+	            System.out.println("Pokelet Pentuplefier is locked\nUnlock it by buying Pokelet Quadrupler");
 	        }
 	    }else if(purchase.equals("buyhairyfinger")){
 	        if(boughtHairyFinger == false){
@@ -763,71 +763,71 @@ public class ShopClass {
 	void pointMultiplierMessage(){
 	    if(boughtPointDoubler == false){
 	        System.out.println("*********************");
-			System.out.println("Point Doubler");
+			System.out.println("Pokelet Doubler");
 			System.out.println("Buy for " + (int)(10000*discount) + " pokelets");
 			System.out.println("Doubles your pokelets");
 			System.out.println("Once bought, allows");
-			System.out.println("you to buy Point");
+			System.out.println("you to buy Pokelet");
 			System.out.println("Tripler");
 			System.out.println("command to buy:");
-			System.out.println("buypointdoubler");
+			System.out.println("buypokeletdoubler");
 	    }else if(boughtPointDoubler == true && boughtPointTripler == false){
 	        System.out.println("*********************");
-			System.out.println("Point Doubler");
+			System.out.println("Pokelet Doubler");
 			System.out.println("Already Bought");
 			System.out.println("*********************");
-			System.out.println("Point Tripler");
+			System.out.println("Pokelet Tripler");
 			System.out.println("Buy for " + (int)(100000*discount) + " pokelets");
 			System.out.println("Triples your pokelets");
 			System.out.println("Once bought, allows");
-			System.out.println("you to buy Point");
+			System.out.println("you to buy Pokelet");
 			System.out.println("Quadrupler");
 			System.out.println("command to buy:");
-			System.out.println("buypointtripler");
+			System.out.println("buypokelettripler");
 	    }else if(boughtPointTripler == true && boughtPointQuadrupler == false){
 	        System.out.println("*********************");
-			System.out.println("Point Doubler");
+			System.out.println("Pokelet Doubler");
 			System.out.println("Already Bought");
 			System.out.println("*********************");
-			System.out.println("Point Tripler");
+			System.out.println("Pokelet Tripler");
 			System.out.println("Already Bought");
 			System.out.println("*********************");
-			System.out.println("Point Quadrupler");
+			System.out.println("Pokelet Quadrupler");
 			System.out.println("Buy for " + (int)(1000000*discount) + " pokelets");
 			System.out.println("Quadruples your pokelets");
 			System.out.println("Once bought, allows");
-			System.out.println("you to buy the Point");
+			System.out.println("you to buy the Pokelet");
 			System.out.println("Pentuplefier");
 			System.out.println("command to buy: ");
-			System.out.println("buypointquadrupler");
+			System.out.println("buypokeletquadrupler");
 	    }else if(boughtPointQuadrupler == true && boughtPointPentuplefier == false){
 	        System.out.println("*********************");
-			System.out.println("Point Doubler");
+			System.out.println("Pokelet Doubler");
 			System.out.println("Already Bought");
 			System.out.println("*********************");
-			System.out.println("Point Tripler");
+			System.out.println("Pokelet Tripler");
 			System.out.println("Already Bought");
 			System.out.println("*********************");
-			System.out.println("Point Quadrupler");
+			System.out.println("Pokelet Quadrupler");
 			System.out.println("Already Bought");
 			System.out.println("*********************");
-			System.out.println("Point Pentuplerfier ");
+			System.out.println("Pokelet Pentuplerfier ");
 			System.out.println("Buy for " + (int)(10000000*discount) + " pokelets");
 			System.out.println("Pentuples your pokelets");
 			System.out.println("command to buy: ");
-			System.out.println("buypointpentuplefier");
+			System.out.println("buypokeletpentuplefier");
 	    }else if(boughtPointPentuplefier == true){
 	        System.out.println("*********************");
-			System.out.println("Point Doubler");
+			System.out.println("Pokelet Doubler");
 			System.out.println("Already Bought");
 			System.out.println("*********************");
-			System.out.println("Point Tripler");
+			System.out.println("Pokelet Tripler");
 			System.out.println("Already Bought");
 			System.out.println("*********************");
-			System.out.println("Point Quadrupler");
+			System.out.println("Pokelet Quadrupler");
 			System.out.println("Already Bought");
 			System.out.println("*********************");
-			System.out.println("Point Pentuplerfier ");
+			System.out.println("Pokelet Pentuplerfier ");
 			System.out.println("Already Bought");
 	    }
 	}//end pointmult
