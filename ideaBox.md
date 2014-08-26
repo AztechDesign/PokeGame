@@ -2,56 +2,7 @@ PokeGame
 ========
 /*IDEA BOX
 ***************************************
-Last Backed Up
-7-11-2014 2207 hours
-***************************************
-Poke Competions
-time stuff so that you have to poke quickly in the dojo
-SUPER AMAZING STUFF
-    Super market with food
-    pokelets
-    in dojo, when you test, you have to spar and beat your opponent
-        take turns,
-        you attack first
-        you can poke head, stomach, or leg
-        comp will generate ranodom number from 1 to 3
-        if 1 then comp will high block
-        if 2 then comp will middle block
-        if 3 then comp will low block
-        if comp blocks corectly, attack fails, else opponent loses one hp
-        then you try to block correctly
-        you always get 5 hp
-        when testing for emperor, comp has 15 hp
-        test for dayimo camp has 14 hp
-        test fo sensei comp has 13 hp
-        etc.
-        if you fail, test fee is still taken, but you need to attend five more classes
-        BTW I added something so that every time you poke, there is a delay, but with higher ranks in the dojo come shorter delays!
-        FINALLY A USE FOR THE DOJO!
-    In shop
-        shop name is gotta buy it all!
-        cuz poke is like poké
-        and yeah
-        so then just like how there are upgrades in the shop, there will be memberships that you buy just like any other upgrade
-        there is bronze membership for 100,000 points
-        you get 1% off all purchases in the shop
-        silver membership for 1,000,000 points
-        you get 2% off all purchases in the shop
-        gold membership for 100,000,000 points
-        you get 3% off all purchases in the shop
-        and finally platinum membership for 1,000,000,000 points
-        you get 5% off all purchases in the shop
-        Also, every time you enter the shop, there is a 10% chance thatthe shop keeper will ask you which 
-        pokémon is your favorite
-        if you reply with some pokémon, I don't know which yet, maybe venusaur, then the shop keeper will say
-        Thats my favorite too! let's be friends!
-        and you get an additionla 2% to whatever you had with the membership
-    Oh yeah, and I added rewards for like 10 pokes 100 pokes 1000 pokes and that stuff, so we should change it from like scratching and slicing and stuff
-    you always poke
-    yeah, that's it pretty much.
-General Stuff
-Take out multiple actions
-ONLY POKES
+Super market with food
 Score
     Lots of Vars
     Lots of Stuff! Btw thesse vars are curently made up  
@@ -71,8 +22,6 @@ Food!
         pokecorn(popcorn)
         poketato(potato)
         jalapeno pokers(jalapeno poppers)
-Change the word points to pokelets
-Characters
 Transition sets
 multiplayer
 
@@ -85,34 +34,30 @@ Poke lottery!
         
     BOSS CHARACTERS!
     more characters
-    **at shop if you buy hotsauce then says how many hot sauce turns you have**
-    **also you can buy hotsauce in bulk**
-    message
-        poke, scratch, slice, and tickle as many characters as you can
-    hollywood edition!
-        only character names and shop messages are changed
-        poke scratch slice and tickle as many famous hollywood figures as you can!
-    Popstar edition
-    
+    1st set = Marty, Steve, Larry, Bowie, Gordo, Quincy, Boogie, Zachary, Smoo, Rugget
+        GORDO = BOSS!!! You can't set his hair on fire, instead, he takes 10% of your pokelets
+    2nd set: Holiday Set = Groundhog Man, Cupid, Leprachaun, Something for Cinco de Mayo, Uncle Sam, Something for Bastille day,              Stephen (for saint stephens day in hungary), Something for Diwali, Santa, New Year's Baby
+        UNCLE SAME = BOSS!!!, he pokes you each time you poke!!! (in posters, "I want you!" it looks like he's poking)
+             You lose pokelets when he pokes you, he has same generator minus one so if you have sharpened nails, he has nothing
+             if you have wolf pack, he has sharpened nails, you get however many pokelets you earned minus the number of
+             pokelets that he earned!!!
+        Also New Year's Baby is the BABY BOSS!!! down below.
+    3rd set: Super Hero Set = Super heroes... no duh. Prob. includes 
+        Averageman(Superman)
+        Baseball bat man(Batman)
+        Arachnidman(Spiderman)
+        Wolferine(Wolverine)
+        Captain Canada(Captain America)
+        Gold Surfer(Silver Surfer)
+            these are in no particular order, if we can use parenthese names, great, else, use names before parentheseses.
+            we need 4 others and a boss or two or three
         BABY BOSS
-        crying stops with tickling touch
-        poke man
-        president
-        
-    Gamer edition
-        e = 3
-        o = 0
-        i = 1
-        l = 1
-        s = 5
-        a = 4
-        t = 7
-        b = 8
-        i.e. b0wi3
-        Sm00
-        54n74 santa
-        R15h1
-        
+             crying stops with tickling touch
+             the longer he cries, measured in pokes, the more a negative effect affects you
+             
+************************************************************
+IMPORTANT!IMPORTANT!IMPORTANT!IMPORTANT!IMPORTANT!IMPORTANT!
+IMPORTANT!IMPORTANT!IMPORTANT!IMPORTANT!IMPORTANT!IMPORTANT!
 Dojo Stuff
     Different belts
     Different Haircutst
@@ -123,56 +68,9 @@ Dojo Stuff
 
 Bank Stuff
 Give out loans!!!!!!!
-    Kiddy Saver no kiddy saver
-    Student Saver no student saver
-    add junior saver
-    Bronze Saver
-    Super Bronze Saver
-    Mega Bronze Saver
-    Deluxe Bronze Saver
-    Silver Saver
-    Super Silver Saver        Once they get here they unlock an achievement called like alliteration in your bank or something like that but more clever
-    Mega Silver Saver
-    Deluxe Silver Saver
-    Gold Saver
-    Super Gold Saver
-    Mega Gold Saver
-    Deluxe Gold Saver
-    Diamond Saver
-    Super Diamond Saver
-    Mega Diamond Saver
-    Deluxe Diamond Saver
-
-
-    Millionaire Club
-
-    Bronze Member
-    Super Bronze Member
-    Mega Bronze Member
-    Deluxe Bronze Member
-    Silver Member
-    Super Silver Member
-    Mega Silver Member
-    Deluxe Silver Member
-    Gold Member
-    Super Gold Member
-    Mega Gold Member
-    Deluxe Gold Member
-    Diamond Member
-    Super Diamond Member
-    Mega Diamond Member
-    Deluxe Diamond Member
-    Platinum Member
-    Super Platinum Member
-    Mega Platinum Member
-    Deluxe Platinum Member
-    Super Mega Deluxe Member
-    Owner
-
     ???????????????????????
     Billionaire Club
     ???????????????????????
-
     Random Prize generators( when in the millionare club ) and the percentage increases as you progress. Prizes include
         Help pay for a lesson
         
@@ -181,5 +79,4 @@ Give out loans!!!!!!!
         DUDE!!!! AMAZING
     Different gamemodes
     Super countdown for thing stuff in poke sparring
-    
 */
