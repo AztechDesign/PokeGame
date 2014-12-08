@@ -19,6 +19,7 @@ public class RunPokeGame {
         int quit;
         int pokes = 0;
         int matthew;
+        int marketAction;
         poke.startScreen();
         do {
             input.reset();
@@ -100,7 +101,19 @@ public class RunPokeGame {
                     userWantsToQuit = true;
                 }
             } else if (action.equals("market")){
-                market.enter(input);
+                marketAction = market.enter(input);
+                
+                switch(marketAction){
+                    case 1:
+                        //DO SOMETHING
+                    case 2:
+                        //do something else
+                    case 3:
+                        //do something else
+                    default:
+                        System.out.println("There has been an error regarding the supermarket enter method. \nIt returned an unknown value");
+                }
+                
             } else if (action.equals("cheatcode")) {
                 matthew = generator.nextInt(100);
                 if(matthew == 1){
