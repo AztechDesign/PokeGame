@@ -1,0 +1,21 @@
+package poke;
+
+import java.util.InputMismatchException;
+
+public class MarketClass{
+
+  private String string1;
+  private int int1;
+  private boolean boolean1;
+  
+  MarketClass(){
+    string1 = "newcomer";
+    int1 = 1;
+    boolean1 = false;
+  }
+  
+  int calculateHunger(){
+    return 0;
+  }
+  
+}//end of class
