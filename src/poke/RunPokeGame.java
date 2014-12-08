@@ -11,6 +11,7 @@ public class RunPokeGame {
         ShopClass shop = new ShopClass();
         BankClass bank = new BankClass();
         DojoClass dojo = new DojoClass();
+        MarketClass market = new MarketClass();
         Scanner input = new Scanner(System.in);
         Random generator = new Random();
         String action;
@@ -98,6 +99,8 @@ public class RunPokeGame {
                 if (quit == 1) {
                     userWantsToQuit = true;
                 }
+            } else if (action.equals("market")){
+                market.enter(input);
             } else if (action.equals("cheatcode")) {
                 matthew = generator.nextInt(100);
                 if(matthew == 1){
@@ -115,6 +118,7 @@ public class RunPokeGame {
             } else if (action.equals("laura")){
             	System.out.println("DO NOT SAY HER NAME!\nIT IS FORBIDDEN! >:(");
             }
+            
             input.reset();
         } while (userWantsToQuit == false);
         input.close();
